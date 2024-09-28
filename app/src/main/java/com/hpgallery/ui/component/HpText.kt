@@ -7,15 +7,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextOverflow
-import com.hpgallery.ui.theme.HpTypography
+import com.hpgallery.ui.theme.LocalColourScheme
+import com.hpgallery.ui.theme.LocalTypography
 import com.hpgallery.ui.utils.DualModePreview
 
 @Composable
 fun HpText(
     text: String,
     modifier: Modifier = Modifier,
-    color: Color = Color.Unspecified,
-    style: TextStyle = HpTypography.bodyLarge,
+    color: Color ,
+    style: TextStyle ,
     maxLines: Int = Int.MAX_VALUE,
     overflow: TextOverflow = TextOverflow.Clip
 ) {
@@ -28,10 +29,13 @@ fun HpText(
         overflow = overflow
     )
 }
+
 @DualModePreview
 @Composable
 fun HpTextPreview() {
     HpText(
-        text = "Sample Text", style = MaterialTheme.typography.bodySmall, color = Color.Black
+        text = "Sample Text",
+        style = LocalTypography.current.labelSmall,
+        color = LocalColourScheme.current.textPrimary
     )
 }

@@ -2,6 +2,7 @@ package com.hpgallery.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.unit.dp
 
 // Define shapes for the application
@@ -10,3 +11,5 @@ val HpShapes = Shapes(
     medium = RoundedCornerShape(8.dp),
     large = RoundedCornerShape(16.dp)
 )
+
+val LocalShapes = staticCompositionLocalOf { HpShapes }
