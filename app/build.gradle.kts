@@ -40,6 +40,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -48,6 +49,9 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+    testOptions {
+        unitTests.isIncludeAndroidResources = true
     }
 }
 
@@ -61,17 +65,47 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    // Retrofit and OkHttp for networking
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    // Room for local database
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.junit.ktx)
+    implementation(libs.androidx.runner)
+    kapt(libs.androidx.room.compiler) // Use kapt for Room
+
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
 
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockk)
+    testImplementation(libs.androidx.core.testing) // For InstantTaskExecutorRule if needed
+    testImplementation(libs.androidx.junit.v115) // JUnit test extension for Android
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+
+    // AndroidX Test - Core and JUnit Extensions
+    androidTestImplementation(libs.androidx.core)
+    androidTestImplementation(libs.androidx.runner.v152)
+    androidTestImplementation(libs.androidx.rules)
+
+    // Room testing
+    androidTestImplementation(libs.room.testing)
+
+    // Coroutines for testing
+    androidTestImplementation(libs.kotlinx.coroutines.test)
+
+    // For Mockito if needed
+    androidTestImplementation(libs.mockito.core.v4110)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
