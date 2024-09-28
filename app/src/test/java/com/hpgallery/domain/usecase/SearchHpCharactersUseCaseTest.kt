@@ -1,20 +1,21 @@
 package com.hpgallery.domain.usecase
 
-
 import com.hpgallery.domain.model.HpCharacter
 import com.hpgallery.domain.repository.HpCharacterRepository
 import io.mockk.coEvery
-import io.mockk.coVerify
 import io.mockk.mockk
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 
+@OptIn(ExperimentalCoroutinesApi::class)
 class SearchHpCharactersUseCaseTest {
 
-    private lateinit var searchHpCharactersUseCase: SearchHpCharactersUseCase
     private lateinit var repository: HpCharacterRepository
+    private lateinit var searchHpCharactersUseCase: SearchHpCharactersUseCase
 
     @Before
     fun setUp() {
@@ -23,39 +24,73 @@ class SearchHpCharactersUseCaseTest {
     }
 
     @Test
-    fun `given characters list when searching with matching query then return filtered list`() = runBlocking {
-        // Given
-        val query = "Harry"
-        val characterList = listOf(
-            HpCharacter(id = "1", name = "Harry Potter", actor = "Daniel Radcliffe", species = "Human", house = "Gryffindor", dateOfBirth = "31-07-1980", isAlive = true, imageUrl = null),
-            HpCharacter(id = "2", name = "Hermione Granger", actor = "Emma Watson", species = "Human", house = "Gryffindor", dateOfBirth = "19-09-1979", isAlive = true, imageUrl = null)
-        )
-        coEvery { repository.getHpCharacters() } returns characterList
+    fun `given character list contains matching query when invoke is called then return filtered list`() =
+        runTest {
+            // Given
+            val query = "Harry"
+            val mockCharacterList = listOf(
+                HpCharacter(
+                    id = "1",
+                    name = "Harry Potter",
+                    house = "Gryffindor",
+                    actor = "Daniel Radcliffe",
+                    species = "Human",
+                    dateOfBirth = "19-09-1979",
+                    isAlive = true,
+                    imageUrl = null
+                ), HpCharacter(
+                    id = "2",
+                    name = "Hermione Granger",
+                    house = "Gryffindor",
+                    actor = "Emma Watson",
+                    species = "Human",
+                    dateOfBirth = "19-09-1979",
+                    isAlive = true,
+                    imageUrl = null
+                )
+            )
+            coEvery { repository.getHpCharacters() } returns mockCharacterList
 
-        // When
-        val result = searchHpCharactersUseCase(query)
+            // When
+            val result = searchHpCharactersUseCase(query).first()
 
-        // Then
-        assertEquals(1, result.size)
-        assertEquals("Harry Potter", result[0].name)
-        coVerify(exactly = 1) { repository.getHpCharacters() }
-    }
+            // Then
+            val expectedList = listOf(mockCharacterList[0]) // Only "Harry Potter" matches
+            assertEquals(expectedList, result)
+        }
 
     @Test
-    fun `given characters list when searching with non-matching query then return empty list`() = runBlocking {
-        // Given
-        val query = "Voldemort"
-        val characterList = listOf(
-            HpCharacter(id = "1", name = "Harry Potter", actor = "Daniel Radcliffe", species = "Human", house = "Gryffindor", dateOfBirth = "31-07-1980", isAlive = true, imageUrl = null),
-            HpCharacter(id = "2", name = "Hermione Granger", actor = "Emma Watson", species = "Human", house = "Gryffindor", dateOfBirth = "19-09-1979", isAlive = true, imageUrl = null)
-        )
-        coEvery { repository.getHpCharacters() } returns characterList
+    fun `given character list does not contain matching query when invoke is called then return empty list`() =
+        runTest {
+            // Given
+            val query = "Voldemort"
+            val mockCharacterList = listOf(
+                HpCharacter(
+                    id = "1",
+                    name = "Harry Potter",
+                    house = "Gryffindor",
+                    actor = "Daniel Radcliffe",
+                    species = "Human",
+                    dateOfBirth = "19-09-1979",
+                    isAlive = true,
+                    imageUrl = null
+                ), HpCharacter(
+                    id = "2",
+                    name = "Hermione Granger",
+                    house = "Gryffindor",
+                    actor = "Emma Watson",
+                    species = "Human",
+                    dateOfBirth = "19-09-1979",
+                    isAlive = true,
+                    imageUrl = null
+                )
+            )
+            coEvery { repository.getHpCharacters() } returns mockCharacterList
 
-        // When
-        val result = searchHpCharactersUseCase(query)
+            // When
+            val result = searchHpCharactersUseCase(query).first()
 
-        // Then
-        assertEquals(0, result.size)
-        coVerify(exactly = 1) { repository.getHpCharacters() }
-    }
+            // Then
+            assertEquals(emptyList<HpCharacter>(), result)
+        }
 }

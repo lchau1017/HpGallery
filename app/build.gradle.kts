@@ -65,6 +65,10 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    // For viewModelScope and other lifecycle components
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.runtime.ktx.v260)
+
     // Add Compose tooling if you haven’t already
     implementation(libs.ui.tooling)
     implementation(libs.ui.tooling.preview)
@@ -83,6 +87,10 @@ dependencies {
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.timber)
+
 
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)

@@ -69,7 +69,7 @@ object DataModule {
 abstract class RepositoryModule {
     @Binds
     @Singleton
-    abstract fun bindCharacterRepository(
+    abstract fun bindHpCharacterRepository(
         characterRepositoryImpl: HpCharacterRepositoryImpl
     ): HpCharacterRepository
 }
