@@ -27,6 +27,8 @@ junitKtx = "1.2.1"
 roomTesting = "2.6.1"
 runner = "1.6.2"
 runnerVersion = "1.5.2"
+uiTooling = "1.5.0"
+uiToolingPreview = "1.5.0"
 
 [libraries]
 androidx-core = { module = "androidx.test:core", version.ref = "core" }
@@ -66,6 +68,8 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitKtx" }
 androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
 room-testing = { module = "androidx.room:room-testing", version.ref = "roomTesting" }
+ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "uiTooling" }
+ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "uiToolingPreview" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -65,7 +65,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-
+    // Add Compose tooling if you haven’t already
+    implementation(libs.ui.tooling)
+    implementation(libs.ui.tooling.preview)
     // Retrofit and OkHttp for networking
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
