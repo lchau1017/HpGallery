@@ -23,9 +23,7 @@ fun HpCharacterDetailsCard(
     viewData: HpCharacterDetailsCardViewData, modifier: Modifier = Modifier
 ) {
     Card(
-        shape = HpShapes.medium,
-        modifier = modifier
-            .padding(8.dp)
+        shape = HpShapes.medium, modifier = modifier.padding(16.dp)
     ) {
         Column(
             modifier = Modifier
@@ -83,7 +81,6 @@ fun HpCharacterDetailsCard(
                     color = LocalTypography.current.labelSmall.color,
                 )
             }
-
         }
     }
 

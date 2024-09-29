@@ -1,4 +1,4 @@
-package com.hpgallery.core
+package com.hpgallery.core.navigation
 
 object NavigationRoutes {
     const val CHARACTER_LIST = "character_list"

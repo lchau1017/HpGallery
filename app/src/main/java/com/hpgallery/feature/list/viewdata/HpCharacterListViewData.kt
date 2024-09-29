@@ -4,6 +4,8 @@ sealed interface HpCharacterListViewData {
 
     data object Loading : HpCharacterListViewData
 
+    data object Empty : HpCharacterListViewData
+
     data class Error(
         val hpCharacterListErrorViewData: HpCharacterListErrorViewData,
     ) : HpCharacterListViewData

@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import com.hpgallery.ui.theme.HpGalleryTheme
 import com.hpgallery.ui.theme.LocalColourScheme
@@ -18,6 +19,7 @@ fun HpText(
     modifier: Modifier = Modifier,
     color: Color,
     style: TextStyle,
+    textAlign: TextAlign = TextAlign.Start,
     maxLines: Int = Int.MAX_VALUE,
     overflow: TextOverflow = TextOverflow.Clip
 ) {
@@ -26,6 +28,7 @@ fun HpText(
         modifier = modifier,
         color = color,
         style = style,
+        textAlign = textAlign,
         maxLines = maxLines,
         overflow = overflow
     )

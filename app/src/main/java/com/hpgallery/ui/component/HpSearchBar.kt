@@ -28,7 +28,7 @@ import com.hpgallery.ui.utils.DualModePreview
 fun HpSearchBar(
     query: String, onQueryChange: (String) -> Unit
 ) {
-    CenterAlignedTopAppBar(modifier = Modifier.padding(vertical = 8.dp),
+    CenterAlignedTopAppBar(modifier = Modifier.padding(8.dp),
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
             containerColor = Color.Transparent,
         ),
@@ -63,9 +63,9 @@ fun HpSearchBar(
                     focusedTextColor = LocalColourScheme.current.textPrimary,
                     unfocusedTextColor = LocalColourScheme.current.textPrimary,
                     disabledTextColor = LocalColourScheme.current.textPrimary,
-                    focusedContainerColor = LocalColourScheme.current.backgroundSecondary,
-                    unfocusedContainerColor = LocalColourScheme.current.backgroundSecondary,
-                    disabledContainerColor = LocalColourScheme.current.backgroundSecondary,
+                    focusedContainerColor = LocalColourScheme.current.backgroundPrimary,
+                    unfocusedContainerColor = LocalColourScheme.current.backgroundPrimary,
+                    disabledContainerColor = LocalColourScheme.current.backgroundPrimary,
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
                     disabledIndicatorColor = Color.Transparent,

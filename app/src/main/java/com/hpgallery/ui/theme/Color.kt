@@ -24,7 +24,12 @@ val GryffindorColor = Color(0xFF740001)
 val SlytherinColor = Color(0xFF1A472A)
 val RavenclawColor = Color(0xFF0C1A40)
 val HufflepuffColor = Color(0xFFEEB939)
-val DefaultHouseColor = Color.Gray
+
+// Lighter House colors
+val GryffindorLightColor = lightenColor(GryffindorColor, 0.2f)
+val SlytherinLightColor = lightenColor(SlytherinColor, 0.2f)
+val RavenclawLightColor = lightenColor(RavenclawColor, 0.2f)
+val HufflepuffLightColor = lightenColor(HufflepuffColor, 0.2f)
 
 private val alpha_10 = 0x1A
 private val alpha_20 = 0x33
@@ -36,3 +41,10 @@ private val alpha_60 = 0x99
 private val alpha_70 = 0xB3
 private val alpha_80 = 0xCC
 private val alpha_90 = 0xE6
+
+fun lightenColor(color: Color, factor: Float): Color {
+    val r = (color.red + (1 - color.red) * factor).coerceIn(0f, 1f)
+    val g = (color.green + (1 - color.green) * factor).coerceIn(0f, 1f)
+    val b = (color.blue + (1 - color.blue) * factor).coerceIn(0f, 1f)
+    return Color(r, g, b)
+}

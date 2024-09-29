@@ -1,4 +1,4 @@
-package com.hpgallery.core
+package com.hpgallery.core.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.hpgallery.core.app.AppViewModel
 import com.hpgallery.core.event.UiEvent
 import com.hpgallery.feature.details.HpCharacterDetailsScreen
 import com.hpgallery.feature.details.HpCharacterDetailsViewModel

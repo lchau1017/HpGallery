@@ -24,10 +24,10 @@ fun HpCharacterRow(
     onClick: () -> Unit,
 ) {
     Card(
-        shape = HpShapes.medium, modifier = modifier.padding(8.dp)
+        shape = HpShapes.medium, modifier = modifier.padding(vertical = 8.dp, horizontal = 16.dp)
     ) {
         Row(modifier = Modifier
-            .background(LocalColourScheme.current.backgroundSecondary)
+            .background(LocalColourScheme.current.backgroundPrimary)
             .fillMaxWidth()
             .clickable { onClick() }
             .padding(16.dp),

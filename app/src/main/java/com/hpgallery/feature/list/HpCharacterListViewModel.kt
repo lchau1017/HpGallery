@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -35,17 +36,20 @@ class HpCharacterListViewModel @Inject constructor(
 
     private fun loadCharacters() {
         viewModelScope.launch {
-            _searchQuery.debounce(300)
-                .distinctUntilChanged().flatMapLatest { query ->
+            _searchQuery.debounce(300).distinctUntilChanged().flatMapLatest { query ->
                     searchHpCharactersUseCase(query).map { characters ->
+                        if (characters.isEmpty()) {
+                            HpCharacterListViewData.Empty
+                        } else {
                             HpCharacterListViewData.Success(hpCharacterRowViewData = characters.map { it.toHpCharacterRowViewData() })
-                        }.catch { throwable ->
-                            _hpCharacterListState.value = HpCharacterListViewData.Error(
-                                hpCharacterListErrorViewData = HpCharacterListErrorViewData(
-                                    errorMessage = throwable.message ?: "Could’t load characters"
-                                )
-                            )
                         }
+                    }.catch { throwable ->
+                        _hpCharacterListState.value = HpCharacterListViewData.Error(
+                            hpCharacterListErrorViewData = HpCharacterListErrorViewData(
+                                errorMessage = throwable.message ?: "Could’t load characters"
+                            )
+                        )
+                    }
                 }.collect {
                     _hpCharacterListState.value = it
                 }

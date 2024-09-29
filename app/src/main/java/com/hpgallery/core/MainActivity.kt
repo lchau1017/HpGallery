@@ -6,6 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import com.hpgallery.core.app.AppViewModel
+import com.hpgallery.core.navigation.AppNavigation
 import com.hpgallery.ui.theme.HpGalleryTheme
 import dagger.hilt.android.AndroidEntryPoint
 

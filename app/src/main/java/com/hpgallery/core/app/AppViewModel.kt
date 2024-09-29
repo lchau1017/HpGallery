@@ -1,4 +1,4 @@
-package com.hpgallery.core
+package com.hpgallery.core.app
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
