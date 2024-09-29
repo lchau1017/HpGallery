@@ -114,6 +114,9 @@ dependencies {
     androidTestImplementation(libs.mockito.core.v4110)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    // Jetpack Compose UI Testing
+    androidTestImplementation (libs.ui.test.junit4)
+    debugImplementation (libs.ui.tooling)
 }
 // Allow references to generated code
 kapt {
