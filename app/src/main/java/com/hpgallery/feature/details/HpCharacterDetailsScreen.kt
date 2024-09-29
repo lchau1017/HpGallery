@@ -17,35 +17,42 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.hpgallery.R
 import com.hpgallery.feature.details.viewdata.HpCharacterDetailsCardViewData
 import com.hpgallery.feature.details.viewdata.HpCharacterDetailsViewData
 import com.hpgallery.ui.component.HpFloatingActionButton
+import com.hpgallery.ui.component.HpText
 import com.hpgallery.ui.theme.LocalColourScheme
+import com.hpgallery.ui.theme.LocalTypography
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HpCharacterDetailsScreen(
-    viewModel: HpCharacterDetailsViewModel = hiltViewModel(),
+    viewData: HpCharacterDetailsViewData,
     onBackClick: () -> Unit,
     isDarkTheme: Boolean,
     onToggleTheme: () -> Unit
 ) {
-    val characterListState = viewModel.hpCharacterDetailsState.collectAsState()
     Scaffold(topBar = {
         TopAppBar(colors = TopAppBarDefaults.topAppBarColors(
             containerColor = LocalColourScheme.current.backgroundPrimary
-        ),
-            title = { Text(text = "Details", color = LocalColourScheme.current.textPrimary) },
-            navigationIcon = {
-                IconButton(onClick = { onBackClick() }) {
-                    Icon(
-                        imageVector = Icons.Default.ArrowBack,
-                        contentDescription = "Back",
-                        tint = LocalColourScheme.current.textPrimary
-                    )
-                }
-            })
+        ), title = {
+            HpText(
+                text = stringResource(id = R.string.details_title),
+                color = LocalColourScheme.current.textPrimary,
+                style = LocalTypography.current.headingSecondaryMedium
+            )
+        }, navigationIcon = {
+            IconButton(onClick = { onBackClick() }) {
+                Icon(
+                    imageVector = Icons.Default.ArrowBack,
+                    contentDescription = "Back",
+                    tint = LocalColourScheme.current.textPrimary
+                )
+            }
+        })
     }, floatingActionButton = {
         HpFloatingActionButton(isDarkTheme, onToggleTheme)
     }) { paddingValues ->
@@ -55,13 +62,13 @@ fun HpCharacterDetailsScreen(
                 .background(LocalColourScheme.current.backgroundPrimary)
                 .padding(paddingValues)
         ) {
-            when (val viewState = characterListState.value) {
+            when (viewData) {
                 is HpCharacterDetailsViewData.Empty -> {
                 }
 
                 is HpCharacterDetailsViewData.Error -> {}
                 is HpCharacterDetailsViewData.Success -> {
-                    CharacterDetails(viewState.hpCharacterDetailsCardViewData)
+                    CharacterDetails(viewData.hpCharacterDetailsCardViewData)
                 }
             }
         }
