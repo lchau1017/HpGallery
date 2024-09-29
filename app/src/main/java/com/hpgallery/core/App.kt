@@ -1,6 +1,7 @@
-package com.hpgallery
+package com.hpgallery.core
 
 import android.app.Application
+import com.hpgallery.BuildConfig
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 

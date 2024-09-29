@@ -1,6 +1,7 @@
-package com.hpgallery
+package com.hpgallery.core
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -9,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.hpgallery.core.event.UiEvent
 import com.hpgallery.feature.details.HpCharacterDetailsScreen
 import com.hpgallery.feature.details.HpCharacterDetailsViewModel
 import com.hpgallery.feature.list.HpCharacterListScreen
@@ -21,19 +23,37 @@ fun AppNavigation(
     val navController = rememberNavController()
     val isDarkTheme by appViewModel.isDarkTheme.collectAsState()
 
+    // Initialize ViewModels here in the top-level composable
+    val listViewModel: HpCharacterListViewModel = hiltViewModel()
+    val detailsViewModel: HpCharacterDetailsViewModel = hiltViewModel()
+
+    // Extract viewData and states from the ViewModels
+    val hpCharacterListState by listViewModel.hpCharacterListState.collectAsState()
+    val searchQuery by listViewModel.searchQuery.collectAsState()
+    val hpCharacterDetailsState by detailsViewModel.hpCharacterDetailsState.collectAsState()
+
+    // Collect and handle UI events using LaunchedEffect
+    LaunchedEffect(Unit) {
+        appViewModel.uiEvent.collect { event ->
+            when (event) {
+                is UiEvent.BackPress -> {
+                    navController.popBackStack()
+                }
+
+                is UiEvent.NavigateToCharacterDetail -> {
+                    navController.navigate("${NavigationRoutes.CHARACTER_DETAIL}/${event.characterId}")
+                }
+            }
+        }
+    }
+
     NavHost(navController = navController, startDestination = NavigationRoutes.CHARACTER_LIST) {
         composable(NavigationRoutes.CHARACTER_LIST) {
-            val listViewModel: HpCharacterListViewModel = hiltViewModel()
-            val hpCharacterListState by listViewModel.hpCharacterListState.collectAsState()
-            val searchQuery by listViewModel.searchQuery.collectAsState()
-
             HpCharacterListScreen(isDarkTheme = isDarkTheme,
                 viewData = hpCharacterListState,
                 searchQuery = searchQuery,
                 updateSearchQuery = { query -> listViewModel.updateSearchQuery(query) },
-                onCharacterClick = { characterId ->
-                    navController.navigate("${NavigationRoutes.CHARACTER_DETAIL}/$characterId")
-                },
+                onCharacterClick = { characterId -> appViewModel.onCharacterClicked(characterId) },
                 onToggleTheme = { appViewModel.toggleTheme() })
         }
         composable(
@@ -41,14 +61,16 @@ fun AppNavigation(
             arguments = listOf(navArgument(NavigationRoutes.CHARACTER_ID_ARG) {
                 type = NavType.StringType
             })
-        ) {
-            val detailsViewModel: HpCharacterDetailsViewModel = hiltViewModel()
-
-            val hpCharacterDetailsState by detailsViewModel.hpCharacterDetailsState.collectAsState()
+        ) { backStackEntry ->
+            val characterId = backStackEntry.arguments?.getString(NavigationRoutes.CHARACTER_ID_ARG)
+            // Fetch details based on characterId if necessary
+            if (characterId != null) {
+                detailsViewModel.loadCharacterDetails(characterId)
+            }
 
             HpCharacterDetailsScreen(viewData = hpCharacterDetailsState,
                 isDarkTheme = isDarkTheme,
-                onBackClick = { navController.popBackStack() },
+                onBackClick = { appViewModel.onBackPressed() },
                 onToggleTheme = { appViewModel.toggleTheme() })
         }
     }

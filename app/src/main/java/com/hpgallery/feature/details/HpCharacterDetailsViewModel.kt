@@ -1,6 +1,5 @@
 package com.hpgallery.feature.details
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hpgallery.domain.usecase.GetHpCharacterDetailsUseCase
@@ -17,24 +16,13 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HpCharacterDetailsViewModel @Inject constructor(
-    savedStateHandle: SavedStateHandle,
     private val getHpCharacterDetailsUseCase: GetHpCharacterDetailsUseCase
 ) : ViewModel() {
-    // A StateFlow to hold the details of character
     private val _hpCharacterDetailsState =
         MutableStateFlow<HpCharacterDetailsViewData>(HpCharacterDetailsViewData.Empty)
     val hpCharacterDetailsState: StateFlow<HpCharacterDetailsViewData> = _hpCharacterDetailsState
 
-    // Retrieve characterId from SavedStateHandle
-    private val characterId: String? = savedStateHandle["characterId"]
-
-    init {
-        characterId?.let { id ->
-            loadCharacterDetails(id)
-        }
-    }
-
-     private fun loadCharacterDetails(id: String) {
+    fun loadCharacterDetails(id: String) {
         viewModelScope.launch {
             getHpCharacterDetailsUseCase(id).map { character ->
                 character?.let { HpCharacterDetailsViewData.Success(hpCharacterDetailsCardViewData = it.toHpCharacterDetailsCardViewData()) }

@@ -1,4 +1,4 @@
-package com.hpgallery
+package com.hpgallery.core
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

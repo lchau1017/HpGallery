@@ -1,4 +1,4 @@
-package com.hpgallery
+package com.hpgallery.core
 
 import android.content.Context
 import com.hpgallery.data.local.HpPreferencesDataStore
