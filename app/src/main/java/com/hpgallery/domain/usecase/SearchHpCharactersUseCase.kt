@@ -8,17 +8,21 @@ import javax.inject.Inject
 
 class SearchHpCharactersUseCase @Inject constructor(private val repository: HpCharacterRepository) {
     suspend operator fun invoke(query: String): Flow<List<HpCharacter>> {
-        val characters = repository.getHpCharacters()
         return flow {
-            if(query.isEmpty()) {
-                emit(characters)
-                return@flow
+            // Fetch the character list from the repository
+            val characters = repository.getHpCharacters()
+
+            // Perform the filtering based on the query (both name and actor)
+            val filteredCharacters = if (query.isBlank()) {
+                characters
+            } else {
+                characters.filter {
+                    it.name.contains(query, ignoreCase = true) ||
+                            it.actor.contains(query, ignoreCase = true)
+                }
             }
-            emit(characters.filter {
-                it.name.contains(query, ignoreCase = true) || it.actor.contains(
-                    query, ignoreCase = true
-                )
-            })
+
+            emit(filteredCharacters)
         }
     }
 }

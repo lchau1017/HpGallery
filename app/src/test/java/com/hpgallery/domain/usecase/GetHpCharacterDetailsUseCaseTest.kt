@@ -34,7 +34,7 @@ class GetHpCharacterDetailsUseCaseTest {
                 house = "Gryffindor",
                 actor = "Daniel Radcliffe",
                 species = "Human",
-                yearOfBirth = "19-09-1979",
+                dateOfBirth = "19-09-1979",
                 alive = true,
                 image = null
             )

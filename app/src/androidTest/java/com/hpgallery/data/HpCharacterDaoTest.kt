@@ -48,7 +48,7 @@ class HpCharacterDaoTest {
             actor = "Daniel Radcliffe",
             species = "Human",
             house = "Gryffindor",
-            yearOfBirth = "31-07-1980",
+            dateOfBirth = "31-07-1980",
             alive = true,
             image = "https://example.com/harry.jpg"
         )

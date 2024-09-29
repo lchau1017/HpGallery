@@ -35,7 +35,7 @@ class SearchHpCharactersUseCaseTest {
                     house = "Gryffindor",
                     actor = "Daniel Radcliffe",
                     species = "Human",
-                    yearOfBirth = "19-09-1979",
+                    dateOfBirth = "19-09-1979",
                     alive = true,
                     image = null
                 ), HpCharacter(
@@ -44,7 +44,7 @@ class SearchHpCharactersUseCaseTest {
                     house = "Gryffindor",
                     actor = "Emma Watson",
                     species = "Human",
-                    yearOfBirth = "19-09-1979",
+                    dateOfBirth = "19-09-1979",
                     alive = true,
                     image = null
                 )
@@ -71,7 +71,7 @@ class SearchHpCharactersUseCaseTest {
                     house = "Gryffindor",
                     actor = "Daniel Radcliffe",
                     species = "Human",
-                    yearOfBirth = "19-09-1979",
+                    dateOfBirth = "19-09-1979",
                     alive = true,
                     image = null
                 ), HpCharacter(
@@ -80,7 +80,7 @@ class SearchHpCharactersUseCaseTest {
                     house = "Gryffindor",
                     actor = "Emma Watson",
                     species = "Human",
-                    yearOfBirth = "19-09-1979",
+                    dateOfBirth = "19-09-1979",
                     alive = true,
                     image = null
                 )

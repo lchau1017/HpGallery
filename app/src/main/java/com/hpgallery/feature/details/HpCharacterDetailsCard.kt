@@ -70,7 +70,13 @@ fun HpCharacterDetailsCard(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 HpText(
-                    text = "DOB: ${viewData.yearOfBirth}",
+                    text = "DOB: ${viewData.dateOfBirth}",
+                    style = LocalTypography.current.labelSmall,
+                    color = LocalTypography.current.labelSmall.color,
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+                HpText(
+                    text = "Status: ${viewData.status}",
                     style = LocalTypography.current.labelSmall,
                     color = LocalTypography.current.labelSmall.color,
                 )
@@ -92,8 +98,9 @@ fun HpCharacterRowPreview() {
                 actor = "Daniel Radcliffe",
                 species = "Wizard",
                 house = "Gryffindor",
-                yearOfBirth = "31 July 1980",
-                image = "https://hp-api.herokuapp.com/images/harry.jpg"
+                dateOfBirth = "31 July 1980",
+                image = "https://hp-api.herokuapp.com/images/harry.jpg",
+                status = "Alive"
             )
         )
     }

@@ -6,6 +6,7 @@ data class HpCharacterDetailsCardViewData(
     val actor: String,
     val species: String,
     val house: String?,
-    val yearOfBirth: String?,
-    val image: String?
+    val dateOfBirth: String?,
+    val image: String?,
+    val status: String,
 )

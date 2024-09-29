@@ -10,7 +10,7 @@ data class HpCharacterEntity(
     val actor: String,
     val species: String,
     val house: String?,
-    val yearOfBirth: String?,
+    val dateOfBirth: String?,
     val alive: Boolean,
     val image: String?
 )

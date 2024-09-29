@@ -15,7 +15,6 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.time.debounce
 import javax.inject.Inject
 
 @HiltViewModel
@@ -23,7 +22,8 @@ class HpCharacterListViewModel @Inject constructor(
     private val searchHpCharactersUseCase: SearchHpCharactersUseCase
 ) : ViewModel() {
 
-     val searchQuery = MutableStateFlow("")
+    private val _searchQuery = MutableStateFlow("")
+    val searchQuery: StateFlow<String> = _searchQuery
 
     private val _hpCharacterListState =
         MutableStateFlow<HpCharacterListViewData>(HpCharacterListViewData.Loading)
@@ -35,7 +35,7 @@ class HpCharacterListViewModel @Inject constructor(
 
     private fun loadCharacters() {
         viewModelScope.launch {
-            searchQuery.debounce(300) // Optional: Add debounce to avoid searching on every keystroke
+            _searchQuery.debounce(300)
                 .distinctUntilChanged().flatMapLatest { query ->
                     searchHpCharactersUseCase(query).map { characters ->
                             HpCharacterListViewData.Success(hpCharacterRowViewData = characters.map { it.toHpCharacterRowViewData() })
@@ -53,6 +53,6 @@ class HpCharacterListViewModel @Inject constructor(
     }
 
     fun updateSearchQuery(query: String) {
-        searchQuery.value = query
+        _searchQuery.value = query
     }
 }

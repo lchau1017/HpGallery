@@ -11,7 +11,7 @@ fun HpCharacterResponse.toDomainModel(): HpCharacter {
         actor = this.actor,
         species = this.species,
         house = this.house,
-        yearOfBirth = this.yearOfBirth,
+        dateOfBirth = this.dateOfBirth,
         alive = this.alive,
         image = this.image
     )
@@ -25,7 +25,7 @@ fun HpCharacterResponse.toEntity(): HpCharacterEntity {
         actor = this.actor,
         species = this.species,
         house = this.house,
-        yearOfBirth = this.yearOfBirth,
+        dateOfBirth = this.dateOfBirth,
         alive = this.alive,
         image = this.image
     )
@@ -39,7 +39,7 @@ fun HpCharacterEntity.toDomainModel(): HpCharacter {
         actor = this.actor,
         species = this.species,
         house = this.house,
-        yearOfBirth = this.yearOfBirth,
+        dateOfBirth = this.dateOfBirth,
         alive = this.alive,
         image = this.image
     )
