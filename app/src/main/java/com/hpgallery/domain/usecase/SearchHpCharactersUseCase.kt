@@ -10,6 +10,10 @@ class SearchHpCharactersUseCase @Inject constructor(private val repository: HpCh
     suspend operator fun invoke(query: String): Flow<List<HpCharacter>> {
         val characters = repository.getHpCharacters()
         return flow {
+            if(query.isEmpty()) {
+                emit(characters)
+                return@flow
+            }
             emit(characters.filter {
                 it.name.contains(query, ignoreCase = true) || it.actor.contains(
                     query, ignoreCase = true
