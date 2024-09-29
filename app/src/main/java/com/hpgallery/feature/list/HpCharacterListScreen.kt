@@ -1,5 +1,6 @@
 package com.hpgallery.feature.list
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -42,16 +43,12 @@ fun HpCharacterListScreen(
         viewModel.updateSearchQuery(searchQuery)
     }
     Scaffold(topBar = {
-        TopAppBar(title = {
-            HpSearchBar(query = searchQuery, onQueryChanged = { query ->
-                searchQuery = query // Update the local mutable state
-            })
+        HpSearchBar(query = searchQuery, onQueryChange = { query ->
+            searchQuery = query // Update the local mutable state
         })
-
     }, floatingActionButton = {
         FloatingActionButton(
-            onClick = onToggleTheme,
-            containerColor = LocalColourScheme.current.fab
+            onClick = onToggleTheme, containerColor = LocalColourScheme.current.fab
         ) {
             Icon(
                 painter = painterResource(
@@ -65,6 +62,7 @@ fun HpCharacterListScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .background(LocalColourScheme.current.backgroundPrimary)
                 .padding(paddingValues)
         ) {
             when (val viewState = characterListState.value) {

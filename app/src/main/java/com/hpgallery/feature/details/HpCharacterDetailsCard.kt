@@ -23,7 +23,9 @@ fun HpCharacterDetailsCard(
     viewData: HpCharacterDetailsCardViewData, modifier: Modifier = Modifier
 ) {
     Card(
-        shape = HpShapes.medium, modifier = modifier.padding(8.dp)
+        shape = HpShapes.medium,
+        modifier = modifier
+            .padding(8.dp)
     ) {
         Column(
             modifier = Modifier
