@@ -18,6 +18,7 @@ data class ColourScheme(
     val textLink: Color,
     val divider: Color,
     val shadow: Color,
+    val fab: Color ,
 )
 
 fun lightColourPalette(): ColourScheme = ColourScheme(
@@ -33,6 +34,7 @@ fun lightColourPalette(): ColourScheme = ColourScheme(
     textLink = highlight100,
     divider = hp_neutral7.transparent10(),
     shadow = hp_neutral7.transparent50(),
+    fab = hp_neutral7
 )
 
 fun darkColourPalette(): ColourScheme = ColourScheme(
@@ -48,6 +50,7 @@ fun darkColourPalette(): ColourScheme = ColourScheme(
     textLink = highlight800,
     divider = hp_neutral38.transparent25(),
     shadow = hp_neutral38.transparent50(),
+    fab = hp_neutral100
 )
 
 val LocalColourScheme = staticCompositionLocalOf { lightColourPalette() }

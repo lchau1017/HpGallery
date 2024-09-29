@@ -85,6 +85,7 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.timber)
+    implementation(libs.androidx.datastore.preferences)
 
 
     testImplementation(libs.junit)
