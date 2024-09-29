@@ -17,11 +17,10 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.hpgallery.R
 import com.hpgallery.feature.details.viewdata.HpCharacterDetailsCardViewData
 import com.hpgallery.feature.details.viewdata.HpCharacterDetailsViewData
+import com.hpgallery.ui.component.HpFloatingActionButton
 import com.hpgallery.ui.theme.LocalColourScheme
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -48,17 +47,7 @@ fun HpCharacterDetailsScreen(
                 }
             })
     }, floatingActionButton = {
-        FloatingActionButton(
-            onClick = onToggleTheme, containerColor = LocalColourScheme.current.fab
-        ) {
-            Icon(
-                painter = painterResource(
-                    id = if (isDarkTheme) R.drawable.ic_light_mode else R.drawable.ic_dark_mode
-                ),
-                contentDescription = "Toggle Theme",
-                tint = LocalColourScheme.current.backgroundPrimary
-            )
-        }
+        HpFloatingActionButton(isDarkTheme, onToggleTheme)
     }) { paddingValues ->
         Column(
             modifier = Modifier

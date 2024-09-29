@@ -10,15 +10,17 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.hpgallery.R
 import com.hpgallery.ui.theme.HpGalleryTheme
 import com.hpgallery.ui.theme.LocalColourScheme
+import com.hpgallery.ui.theme.LocalTypography
 import com.hpgallery.ui.utils.DualModePreview
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -34,7 +36,13 @@ fun HpSearchBar(
             OutlinedTextField(
                 value = query,
                 onValueChange = onQueryChange,
-                placeholder = { Text(text = "Search...") },
+                placeholder = {
+                    HpText(
+                        text = stringResource(id = R.string.search_hint),
+                        color = LocalColourScheme.current.textSecondary,
+                        style = LocalTypography.current.headingSecondaryMedium
+                    )
+                },
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(24.dp), // Rounded corners for the search bar
@@ -42,7 +50,8 @@ fun HpSearchBar(
                     if (query.isNotEmpty()) {
                         IconButton(onClick = { onQueryChange("") }) {
                             Icon(
-                                imageVector = Icons.Filled.Clear, contentDescription = "Clear Text"
+                                imageVector = Icons.Filled.Clear,
+                                contentDescription = stringResource(id = R.string.clear_text_description)
                             )
                         }
                     }
@@ -68,6 +77,7 @@ fun HpSearchBar(
                     unfocusedTrailingIconColor = LocalColourScheme.current.textSecondary,
                     disabledTrailingIconColor = LocalColourScheme.current.textSecondary,
                 ),
+                textStyle = LocalTypography.current.headingSecondaryMedium
             )
         })
 }

@@ -35,26 +35,3 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun AppNavigation(
-    appViewModel: AppViewModel
-) {
-    val navController = rememberNavController()
-    val isDarkTheme by appViewModel.isDarkTheme.collectAsState()
-
-    NavHost(navController = navController, startDestination = "character_list") {
-        composable("character_list") {
-            HpCharacterListScreen(onCharacterClick = { characterId ->
-                navController.navigate("character_detail/$characterId")
-            }, isDarkTheme = isDarkTheme, onToggleTheme = { appViewModel.toggleTheme() })
-        }
-        composable(
-            "character_detail/{characterId}",
-            arguments = listOf(navArgument("characterId") { type = NavType.StringType })
-        ) {
-            HpCharacterDetailsScreen(onBackClick = { navController.popBackStack() },
-                isDarkTheme = isDarkTheme,
-                onToggleTheme = { appViewModel.toggleTheme() })
-        }
-    }
-}
