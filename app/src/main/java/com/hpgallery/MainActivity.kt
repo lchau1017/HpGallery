@@ -25,9 +25,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             HpGalleryTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    AppNavigation()
-                }
+                AppNavigation()
             }
         }
     }
@@ -46,7 +44,7 @@ fun AppNavigation() {
             "character_detail/{characterId}",
             arguments = listOf(navArgument("characterId") { type = NavType.StringType })
         ) {
-            HpCharacterDetailsScreen()
+            HpCharacterDetailsScreen(onBackClick = { navController.popBackStack() })
         }
     }
 }
