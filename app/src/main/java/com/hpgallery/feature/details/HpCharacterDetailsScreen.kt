@@ -1,6 +1,5 @@
 package com.hpgallery.feature.details
 
-import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,13 +14,13 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.hpgallery.R
 import com.hpgallery.feature.details.viewdata.HpCharacterDetailsCardViewData
 import com.hpgallery.feature.details.viewdata.HpCharacterDetailsErrorViewData
 import com.hpgallery.feature.details.viewdata.HpCharacterDetailsViewData
 import com.hpgallery.ui.component.HpEmptyScreen
+import com.hpgallery.ui.component.HpErrorScreen
 import com.hpgallery.ui.component.HpFloatingActionButton
 import com.hpgallery.ui.component.HpText
 import com.hpgallery.ui.theme.HpGalleryTheme
@@ -70,11 +69,7 @@ fun HpCharacterDetailsScreen(
                 }
 
                 is HpCharacterDetailsViewData.Error -> {
-                    Toast.makeText(
-                        LocalContext.current,
-                        "An error occurred: ${viewData.hpCharacterDetailsErrorViewData.errorMessage}",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    HpErrorScreen(viewData.hpCharacterDetailsErrorViewData.errorMessage)
                 }
 
                 is HpCharacterDetailsViewData.Success -> {

@@ -11,6 +11,8 @@ val hp_neutral86 = Color(color = 0xFFD6D5D0)
 val hp_neutral93 = Color(color = 0xFFF0EFEB)
 val hp_neutral97 = Color(color = 0xFFF9F9F5)
 val hp_neutral100 = Color(color = 0xFFFAFAFA)
+val error = Color(color = 0xFF00FF00)
+
 
 val purple_80 = Color(0xFFD0BCFF)
 val purple_40 = Color(0xFF6650a4)
@@ -30,6 +32,7 @@ val GryffindorLightColor = lightenColor(GryffindorColor, 0.2f)
 val SlytherinLightColor = lightenColor(SlytherinColor, 0.2f)
 val RavenclawLightColor = lightenColor(RavenclawColor, 0.2f)
 val HufflepuffLightColor = lightenColor(HufflepuffColor, 0.2f)
+val errorLightColor = lightenColor(error, 0.2f)
 
 private val alpha_10 = 0x1A
 private val alpha_20 = 0x33

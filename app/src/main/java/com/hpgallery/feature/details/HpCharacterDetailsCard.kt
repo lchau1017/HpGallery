@@ -88,7 +88,7 @@ fun HpCharacterDetailsCard(
 
 @DualModePreview
 @Composable
-fun HpCharacterRowPreview() {
+fun HpCharacterDetailsCardPreview() {
     HpGalleryTheme {
         HpCharacterDetailsCard(
             HpCharacterDetailsCardViewData(

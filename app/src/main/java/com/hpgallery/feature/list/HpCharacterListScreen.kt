@@ -1,6 +1,5 @@
 package com.hpgallery.feature.list
 
-import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,12 +15,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import com.hpgallery.feature.list.viewdata.HpCharacterListErrorViewData
 import com.hpgallery.feature.list.viewdata.HpCharacterListViewData
 import com.hpgallery.feature.list.viewdata.HpCharacterRowViewData
 import com.hpgallery.ui.component.HpCircularProgressIndicator
 import com.hpgallery.ui.component.HpEmptyScreen
+import com.hpgallery.ui.component.HpErrorScreen
 import com.hpgallery.ui.component.HpFloatingActionButton
 import com.hpgallery.ui.component.HpSearchBar
 import com.hpgallery.ui.theme.HpGalleryTheme
@@ -62,11 +61,7 @@ fun HpCharacterListScreen(
                 }
 
                 is HpCharacterListViewData.Error -> {
-                    Toast.makeText(
-                        LocalContext.current,
-                        "An error occurred: ${viewData.hpCharacterListErrorViewData.errorMessage}",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    HpErrorScreen(viewData.hpCharacterListErrorViewData.errorMessage)
                 }
 
                 is HpCharacterListViewData.Success -> {
