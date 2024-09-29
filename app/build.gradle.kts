@@ -65,26 +65,21 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    // For viewModelScope and other lifecycle components
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.lifecycle.runtime.ktx.v260)
+    implementation(libs.coil.compose)
 
-    // Add Compose tooling if you haven’t already
     implementation(libs.ui.tooling)
     implementation(libs.ui.tooling.preview)
-    // Retrofit and OkHttp for networking
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
-
-    // Room for local database
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.junit.ktx)
     implementation(libs.androidx.runner)
-    kapt(libs.androidx.room.compiler) // Use kapt for Room
-
+    kapt(libs.androidx.room.compiler)
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
@@ -95,8 +90,8 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockk)
-    testImplementation(libs.androidx.core.testing) // For InstantTaskExecutorRule if needed
-    testImplementation(libs.androidx.junit.v115) // JUnit test extension for Android
+    testImplementation(libs.androidx.core.testing)
+    testImplementation(libs.androidx.junit.v115)
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

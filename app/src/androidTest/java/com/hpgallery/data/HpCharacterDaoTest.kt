@@ -29,7 +29,7 @@ class HpCharacterDaoTest {
             context,
             AppDatabase::class.java
         )
-            .allowMainThreadQueries() // For testing purposes only
+            .allowMainThreadQueries()
             .build()
         characterDao = database.hpCharacterDao()
     }
@@ -48,9 +48,9 @@ class HpCharacterDaoTest {
             actor = "Daniel Radcliffe",
             species = "Human",
             house = "Gryffindor",
-            dateOfBirth = "31-07-1980",
-            isAlive = true,
-            imageUrl = "https://example.com/harry.jpg"
+            yearOfBirth = "31-07-1980",
+            alive = true,
+            image = "https://example.com/harry.jpg"
         )
 
         // When

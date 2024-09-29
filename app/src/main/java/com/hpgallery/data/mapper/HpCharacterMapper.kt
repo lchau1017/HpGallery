@@ -4,7 +4,6 @@ import com.hpgallery.data.local.HpCharacterEntity
 import com.hpgallery.data.remote.HpCharacterResponse
 import com.hpgallery.domain.model.HpCharacter
 
-// Map network response to domain model
 fun HpCharacterResponse.toDomainModel(): HpCharacter {
     return HpCharacter(
         id = this.id,
@@ -12,9 +11,9 @@ fun HpCharacterResponse.toDomainModel(): HpCharacter {
         actor = this.actor,
         species = this.species,
         house = this.house,
-        dateOfBirth = this.dateOfBirth,
-        isAlive = this.isAlive,
-        imageUrl = this.imageUrl
+        yearOfBirth = this.yearOfBirth,
+        alive = this.alive,
+        image = this.image
     )
 }
 
@@ -26,9 +25,9 @@ fun HpCharacterResponse.toEntity(): HpCharacterEntity {
         actor = this.actor,
         species = this.species,
         house = this.house,
-        dateOfBirth = this.dateOfBirth,
-        isAlive = this.isAlive,
-        imageUrl = this.imageUrl
+        yearOfBirth = this.yearOfBirth,
+        alive = this.alive,
+        image = this.image
     )
 }
 
@@ -40,8 +39,8 @@ fun HpCharacterEntity.toDomainModel(): HpCharacter {
         actor = this.actor,
         species = this.species,
         house = this.house,
-        dateOfBirth = this.dateOfBirth,
-        isAlive = this.isAlive,
-        imageUrl = this.imageUrl
+        yearOfBirth = this.yearOfBirth,
+        alive = this.alive,
+        image = this.image
     )
 }

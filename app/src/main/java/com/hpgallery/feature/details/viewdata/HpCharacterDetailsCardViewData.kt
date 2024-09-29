@@ -1,12 +1,11 @@
-package com.hpgallery.domain.model
+package com.hpgallery.feature.details.viewdata
 
-data class HpCharacter(
+data class HpCharacterDetailsCardViewData(
     val id: String,
     val name: String,
     val actor: String,
     val species: String,
     val house: String?,
     val yearOfBirth: String?,
-    val alive: Boolean,
     val image: String?
 )

@@ -34,9 +34,9 @@ class GetHpCharacterDetailsUseCaseTest {
                 house = "Gryffindor",
                 actor = "Daniel Radcliffe",
                 species = "Human",
-                dateOfBirth = "19-09-1979",
-                isAlive = true,
-                imageUrl = null
+                yearOfBirth = "19-09-1979",
+                alive = true,
+                image = null
             )
             coEvery { repository.getCharacterDetails(characterId) } returns mockCharacter
 

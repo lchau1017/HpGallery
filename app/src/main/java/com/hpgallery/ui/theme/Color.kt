@@ -29,7 +29,7 @@ val GryffindorColor = Color(0xFF740001)
 val SlytherinColor = Color(0xFF1A472A)
 val RavenclawColor = Color(0xFF0C1A40)
 val HufflepuffColor = Color(0xFFEEB939)
-val DefaultHouseColor = Color.Gray // Fallback color if the house is unknown
+val DefaultHouseColor = Color.Gray
 
 private val alpha_10 = 0x1A
 private val alpha_20 = 0x33

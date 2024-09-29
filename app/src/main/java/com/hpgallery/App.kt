@@ -9,7 +9,6 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        // Initialize Timber
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }

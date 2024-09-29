@@ -12,14 +12,12 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
 class HpCharacterListViewModel @Inject constructor(
     private val getHpCharactersUseCase: GetHpCharactersUseCase
 ) : ViewModel() {
-    // A StateFlow to hold the list of characters
     private val _hpCharacterListState =
         MutableStateFlow<HpCharacterListViewData>(HpCharacterListViewData.Loading)
     val hpCharacterListState: StateFlow<HpCharacterListViewData> = _hpCharacterListState
@@ -31,7 +29,6 @@ class HpCharacterListViewModel @Inject constructor(
     private fun loadCharacters() {
         viewModelScope.launch {
             getHpCharactersUseCase().map { characters ->
-                Timber.d("getHpCharactersUseCase characters")
                 HpCharacterListViewData.Success(hpCharacterRowViewData = characters.map { it.toHpCharacterRowViewData() })
             }.catch { throwable ->
                 _hpCharacterListState.value = HpCharacterListViewData.Error(

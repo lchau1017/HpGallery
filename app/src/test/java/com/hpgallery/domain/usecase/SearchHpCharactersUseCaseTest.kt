@@ -35,18 +35,18 @@ class SearchHpCharactersUseCaseTest {
                     house = "Gryffindor",
                     actor = "Daniel Radcliffe",
                     species = "Human",
-                    dateOfBirth = "19-09-1979",
-                    isAlive = true,
-                    imageUrl = null
+                    yearOfBirth = "19-09-1979",
+                    alive = true,
+                    image = null
                 ), HpCharacter(
                     id = "2",
                     name = "Hermione Granger",
                     house = "Gryffindor",
                     actor = "Emma Watson",
                     species = "Human",
-                    dateOfBirth = "19-09-1979",
-                    isAlive = true,
-                    imageUrl = null
+                    yearOfBirth = "19-09-1979",
+                    alive = true,
+                    image = null
                 )
             )
             coEvery { repository.getHpCharacters() } returns mockCharacterList
@@ -55,7 +55,7 @@ class SearchHpCharactersUseCaseTest {
             val result = searchHpCharactersUseCase(query).first()
 
             // Then
-            val expectedList = listOf(mockCharacterList[0]) // Only "Harry Potter" matches
+            val expectedList = listOf(mockCharacterList[0])
             assertEquals(expectedList, result)
         }
 
@@ -71,18 +71,18 @@ class SearchHpCharactersUseCaseTest {
                     house = "Gryffindor",
                     actor = "Daniel Radcliffe",
                     species = "Human",
-                    dateOfBirth = "19-09-1979",
-                    isAlive = true,
-                    imageUrl = null
+                    yearOfBirth = "19-09-1979",
+                    alive = true,
+                    image = null
                 ), HpCharacter(
                     id = "2",
                     name = "Hermione Granger",
                     house = "Gryffindor",
                     actor = "Emma Watson",
                     species = "Human",
-                    dateOfBirth = "19-09-1979",
-                    isAlive = true,
-                    imageUrl = null
+                    yearOfBirth = "19-09-1979",
+                    alive = true,
+                    image = null
                 )
             )
             coEvery { repository.getHpCharacters() } returns mockCharacterList

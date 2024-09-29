@@ -1,6 +1,7 @@
 [versions]
 agp = "8.6.0"
 androidxJunit = "1.1.5"
+coilCompose = "2.7.0"
 converterGson = "2.9.0"
 core = "1.6.1"
 coreTesting = "2.2.0"
@@ -48,6 +49,7 @@ androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRunt
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 androidx-rules = { module = "androidx.test:rules", version.ref = "core" }
 androidx-runner-v152 = { module = "androidx.test:runner", version.ref = "runnerVersion" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
