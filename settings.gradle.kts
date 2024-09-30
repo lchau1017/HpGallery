@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "HpGallery"
 include(":app")
+include(":domain")

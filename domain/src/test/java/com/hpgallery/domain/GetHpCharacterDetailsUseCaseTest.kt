@@ -1,17 +1,16 @@
-package com.hpgallery.domain.usecase
+package com.hpgallery.domain
 
 import com.hpgallery.domain.model.HpCharacter
 import com.hpgallery.domain.repository.HpCharacterRepository
+import com.hpgallery.domain.usecase.GetHpCharacterDetailsUseCase
 import io.mockk.coEvery
 import io.mockk.mockk
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 
-@OptIn(ExperimentalCoroutinesApi::class)
 class GetHpCharacterDetailsUseCaseTest {
 
     private lateinit var repository: HpCharacterRepository
