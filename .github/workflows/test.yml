@@ -62,18 +62,21 @@ jobs:
           distribution: 'temurin'
           cache: gradle
       - name: Start Emulator
+        uses: android-actions/setup-android@v2
+      - name: Run Instrumented Tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
           target: google_apis
           arch: x86_64
           profile: Nexus 6
-          emulator-options: "-no-boot-anim -no-audio"
+          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
-      - name: Wait for Emulator to Boot
-        run: adb wait-for-device
-      - name: Run Instrumented Tests
-        run: ./gradlew connectedAndroidTest
+          script: |
+            adb devices
+            adb wait-for-device
+            adb shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done;'
+            ./gradlew connectedAndroidTest
       - name: Upload Instrumented Test Results
         uses: actions/upload-artifact@v3
         if: always()
