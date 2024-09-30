@@ -1,5 +1,5 @@
 [versions]
-agp = "8.5.2"
+agp = "8.5.0"
 coilCompose = "2.7.0"
 converterGson = "2.9.0"
 core = "1.6.1"
@@ -31,7 +31,7 @@ timber = "5.0.1"
 uiTestJunit4 = "1.4.0"
 uiTooling = "1.5.0"
 uiToolingPreview = "1.5.0"
-android-gradlePlugin = "8.6.0"
+android-gradlePlugin = "8.5.0"
 
 [libraries]
 androidx-core = { module = "androidx.test:core", version.ref = "core" }
