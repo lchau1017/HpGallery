@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 8.5.2" type="baseline" client="gradle" dependencies="false" name="AGP (8.5.2)" variant="all" version="8.5.2">
+
+    <issue
+        id="ObsoleteLintCustomCheck"
+        message="Library lint checks reference invalid APIs; these checks **will be skipped**!&#xA;&#xA;Lint found an issue registry (`androidx.navigation.common.lint.NavigationCommonIssueRegistry`)&#xA;which contains some references to invalid API:&#xA;com.android.tools.lint.checks.infrastructure.TestFiles: com.android.tools.lint.checks.infrastructure.TestFile bytecode(java.lang.String,com.android.tools.lint.checks.infrastructure.TestFile,long,java.lang.String[])&#xA;(Referenced from androidx/navigation/lint/common/LintUtilKt.class)&#xA;&#xA;Therefore, this lint check library is **not** included&#xA;in analysis. This affects the following lint checks:&#xA;`EmptyNavDeepLink`,`WrongStartDestinationType`&#xA;&#xA;To use this lint check, upgrade to a more recent version&#xA;of the library.">
+        <location
+            file="$GRADLE_USER_HOME/caches/transforms-4/4ca57a65872e3dc241e48181460dc28e/transformed/navigation-common-2.8.1/jars/lint.jar"/>
+    </issue>
+
+    <issue
+        id="ObsoleteLintCustomCheck"
+        message="Library lint checks reference invalid APIs; these checks **will be skipped**!&#xA;&#xA;Lint found an issue registry (`androidx.navigation.compose.lint.NavigationComposeIssueRegistry`)&#xA;which contains some references to invalid API:&#xA;com.android.tools.lint.checks.infrastructure.TestFiles: com.android.tools.lint.checks.infrastructure.TestFile bytecode(java.lang.String,com.android.tools.lint.checks.infrastructure.TestFile,long,java.lang.String[])&#xA;(Referenced from androidx/navigation/lint/common/LintUtilKt.class)&#xA;&#xA;Therefore, this lint check library is **not** included&#xA;in analysis. This affects the following lint checks:&#xA;`ComposableDestinationInComposeScope`,`ComposableNavGraphInComposeScope`,`UnrememberedGetBackStackEntry`,`WrongStartDestinationType`&#xA;&#xA;To use this lint check, upgrade to a more recent version&#xA;of the library.">
+        <location
+            file="$GRADLE_USER_HOME/caches/transforms-4/4e6bb04fd002aae8c5968e59c0a0da33/transformed/navigation-compose-2.8.1/jars/lint.jar"/>
+    </issue>
+
+    <issue
+        id="ObsoleteLintCustomCheck"
+        message="Library lint checks reference invalid APIs; these checks **will be skipped**!&#xA;&#xA;Lint found an issue registry (`androidx.navigation.runtime.lint.NavigationRuntimeIssueRegistry`)&#xA;which contains some references to invalid API:&#xA;com.android.tools.lint.checks.infrastructure.TestFiles: com.android.tools.lint.checks.infrastructure.TestFile bytecode(java.lang.String,com.android.tools.lint.checks.infrastructure.TestFile,long,java.lang.String[])&#xA;(Referenced from androidx/navigation/lint/common/LintUtilKt.class)&#xA;&#xA;Therefore, this lint check library is **not** included&#xA;in analysis. This affects the following lint checks:&#xA;`DeepLinkInActivityDestination`,`WrongStartDestinationType`,`WrongNavigateRouteType`&#xA;&#xA;To use this lint check, upgrade to a more recent version&#xA;of the library.">
+        <location
+            file="$GRADLE_USER_HOME/caches/transforms-4/e1bd93df528c3031f0c3bab7abb1614e/transformed/navigation-runtime-2.8.1/jars/lint.jar"/>
+    </issue>
+
+    <issue
+        id="UnknownIssueId"
+        message="Unknown issue id &quot;TypographyFractionsTypographyQuotes&quot;. Did you mean:&#xA;&apos;TypographyFractions&apos; (Fraction string can be replaced with fraction character)&#xA;&apos;TypographyQuotes&apos; (Straight quotes can be replaced with curvy quotes, and apostrophes with typographic apostrophes.)&#xA;?">
+        <location
+            file="build.gradle.kts"/>
+    </issue>
+
+    <issue
+        id="UnknownIssueId"
+        message="Unknown issue id &quot;TypographyFractionsTypographyQuotes&quot;. Did you mean:&#xA;&apos;TypographyFractions&apos; (Fraction string can be replaced with fraction character)&#xA;&apos;TypographyQuotes&apos; (Straight quotes can be replaced with curvy quotes, and apostrophes with typographic apostrophes.)&#xA;?">
+        <location
+            file="build.gradle.kts"/>
+    </issue>
+
+    <issue
+        id="RedundantLabel"
+        message="Redundant label can be removed"
+        errorLine1="            android:label=&quot;@string/app_name&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="20"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.application than 8.5.2 is available: 8.6.1"
+        errorLine1="agp = &quot;8.5.2&quot;"
+        errorLine2="      ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="2"
+            column="7"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.application than 8.5.2 is available: 8.6.1"
+        errorLine1="agp = &quot;8.5.2&quot;"
+        errorLine2="      ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="2"
+            column="7"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.application than 8.5.2 is available: 8.6.1"
+        errorLine1="agp = &quot;8.5.2&quot;"
+        errorLine2="      ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="2"
+            column="7"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1"
+        errorLine1="androidxJunit = &quot;1.1.5&quot;"
+        errorLine2="                ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="3"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1"
+        errorLine1="androidxJunit = &quot;1.1.5&quot;"
+        errorLine2="                ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="3"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1"
+        errorLine1="androidxJunit = &quot;1.1.5&quot;"
+        errorLine2="                ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="3"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlin.android than 1.9.0 is available: 2.0.20"
+        errorLine1="kotlin = &quot;1.9.0&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="11"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlin.android than 1.9.0 is available: 2.0.20"
+        errorLine1="kotlin = &quot;1.9.0&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="11"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlin.android than 1.9.0 is available: 2.0.20"
+        errorLine1="kotlin = &quot;1.9.0&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="11"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.7.3 is available: 1.9.0"
+        errorLine1="kotlinxCoroutinesTestVersion = &quot;1.7.3&quot;"
+        errorLine2="                               ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="17"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.7.3 is available: 1.9.0"
+        errorLine1="kotlinxCoroutinesTestVersion = &quot;1.7.3&quot;"
+        errorLine2="                               ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="17"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.7.3 is available: 1.9.0"
+        errorLine1="kotlinxCoroutinesTestVersion = &quot;1.7.3&quot;"
+        errorLine2="                               ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="17"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose:compose-bom than 2024.04.01 is available: 2024.09.02"
+        errorLine1="composeBom = &quot;2024.04.01&quot;"
+        errorLine2="             ~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="20"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose:compose-bom than 2024.04.01 is available: 2024.09.02"
+        errorLine1="composeBom = &quot;2024.04.01&quot;"
+        errorLine2="             ~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="20"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose:compose-bom than 2024.04.01 is available: 2024.09.02"
+        errorLine1="composeBom = &quot;2024.04.01&quot;"
+        errorLine2="             ~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="20"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.6.0 is available: 2.8.6"
+        errorLine1="lifecycleRuntimeKtxVersion = &quot;2.6.0&quot;"
+        errorLine2="                             ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="21"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.6.0 is available: 2.8.6"
+        errorLine1="lifecycleRuntimeKtxVersion = &quot;2.6.0&quot;"
+        errorLine2="                             ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="21"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.6.0 is available: 2.8.6"
+        errorLine1="lifecycleRuntimeKtxVersion = &quot;2.6.0&quot;"
+        errorLine2="                             ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="21"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.mockito:mockito-core than 4.11.0 is available: 5.12.0"
+        errorLine1="mockitoCoreVersion = &quot;4.11.0&quot;"
+        errorLine2="                     ~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="24"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.mockito:mockito-core than 4.11.0 is available: 5.12.0"
+        errorLine1="mockitoCoreVersion = &quot;4.11.0&quot;"
+        errorLine2="                     ~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="24"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.mockito:mockito-core than 4.11.0 is available: 5.12.0"
+        errorLine1="mockitoCoreVersion = &quot;4.11.0&quot;"
+        errorLine2="                     ~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="24"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test:runner than 1.5.2 is available: 1.6.2"
+        errorLine1="runnerVersion = &quot;1.5.2&quot;"
+        errorLine2="                ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="34"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test:runner than 1.5.2 is available: 1.6.2"
+        errorLine1="runnerVersion = &quot;1.5.2&quot;"
+        errorLine2="                ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="34"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test:runner than 1.5.2 is available: 1.6.2"
+        errorLine1="runnerVersion = &quot;1.5.2&quot;"
+        errorLine2="                ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="34"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose.ui:ui-test-junit4 than 1.4.0 is available: 1.7.2"
+        errorLine1="uiTestJunit4 = &quot;1.4.0&quot;"
+        errorLine2="               ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="36"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose.ui:ui-test-junit4 than 1.4.0 is available: 1.7.2"
+        errorLine1="uiTestJunit4 = &quot;1.4.0&quot;"
+        errorLine2="               ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="36"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose.ui:ui-test-junit4 than 1.4.0 is available: 1.7.2"
+        errorLine1="uiTestJunit4 = &quot;1.4.0&quot;"
+        errorLine2="               ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="36"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose.ui:ui-tooling than 1.5.0 is available: 1.7.2"
+        errorLine1="uiTooling = &quot;1.5.0&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="37"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose.ui:ui-tooling than 1.5.0 is available: 1.7.2"
+        errorLine1="uiTooling = &quot;1.5.0&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="37"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose.ui:ui-tooling than 1.5.0 is available: 1.7.2"
+        errorLine1="uiTooling = &quot;1.5.0&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="37"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose.ui:ui-tooling-preview than 1.5.0 is available: 1.7.2"
+        errorLine1="uiToolingPreview = &quot;1.5.0&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="38"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose.ui:ui-tooling-preview than 1.5.0 is available: 1.7.2"
+        errorLine1="uiToolingPreview = &quot;1.5.0&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="38"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose.ui:ui-tooling-preview than 1.5.0 is available: 1.7.2"
+        errorLine1="uiToolingPreview = &quot;1.5.0&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="38"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.test.ext:junit but with different version"
+        errorLine1="androidx-junit-v115 = { module = &quot;androidx.test.ext:junit&quot;, version.ref = &quot;androidxJunit&quot; }"
+        errorLine2="                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="46"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.test.ext:junit but with different version"
+        errorLine1="androidx-junit-v115 = { module = &quot;androidx.test.ext:junit&quot;, version.ref = &quot;androidxJunit&quot; }"
+        errorLine2="                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="46"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.test.ext:junit but with different version"
+        errorLine1="androidx-junit-v115 = { module = &quot;androidx.test.ext:junit&quot;, version.ref = &quot;androidxJunit&quot; }"
+        errorLine2="                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="46"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.lifecycle:lifecycle-runtime-ktx but with different version"
+        errorLine1="androidx-lifecycle-runtime-ktx-v260 = { module = &quot;androidx.lifecycle:lifecycle-runtime-ktx&quot;, version.ref = &quot;lifecycleRuntimeKtxVersion&quot; }"
+        errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="47"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.lifecycle:lifecycle-runtime-ktx but with different version"
+        errorLine1="androidx-lifecycle-runtime-ktx-v260 = { module = &quot;androidx.lifecycle:lifecycle-runtime-ktx&quot;, version.ref = &quot;lifecycleRuntimeKtxVersion&quot; }"
+        errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="47"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.lifecycle:lifecycle-runtime-ktx but with different version"
+        errorLine1="androidx-lifecycle-runtime-ktx-v260 = { module = &quot;androidx.lifecycle:lifecycle-runtime-ktx&quot;, version.ref = &quot;lifecycleRuntimeKtxVersion&quot; }"
+        errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="47"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.test:runner but with different version"
+        errorLine1="androidx-runner-v152 = { module = &quot;androidx.test:runner&quot;, version.ref = &quot;runnerVersion&quot; }"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="54"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.test:runner but with different version"
+        errorLine1="androidx-runner-v152 = { module = &quot;androidx.test:runner&quot;, version.ref = &quot;runnerVersion&quot; }"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="54"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.test:runner but with different version"
+        errorLine1="androidx-runner-v152 = { module = &quot;androidx.test:runner&quot;, version.ref = &quot;runnerVersion&quot; }"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="54"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.test.ext:junit but with different version"
+        errorLine1="androidx-junit = { group = &quot;androidx.test.ext&quot;, name = &quot;junit&quot;, version.ref = &quot;junitVersion&quot; }"
+        errorLine2="                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="60"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.test.ext:junit but with different version"
+        errorLine1="androidx-junit = { group = &quot;androidx.test.ext&quot;, name = &quot;junit&quot;, version.ref = &quot;junitVersion&quot; }"
+        errorLine2="                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="60"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.test.ext:junit but with different version"
+        errorLine1="androidx-junit = { group = &quot;androidx.test.ext&quot;, name = &quot;junit&quot;, version.ref = &quot;junitVersion&quot; }"
+        errorLine2="                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="60"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.lifecycle:lifecycle-runtime-ktx but with different version"
+        errorLine1="androidx-lifecycle-runtime-ktx = { group = &quot;androidx.lifecycle&quot;, name = &quot;lifecycle-runtime-ktx&quot;, version.ref = &quot;lifecycleRuntimeKtx&quot; }"
+        errorLine2="                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="62"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.lifecycle:lifecycle-runtime-ktx but with different version"
+        errorLine1="androidx-lifecycle-runtime-ktx = { group = &quot;androidx.lifecycle&quot;, name = &quot;lifecycle-runtime-ktx&quot;, version.ref = &quot;lifecycleRuntimeKtx&quot; }"
+        errorLine2="                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="62"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.lifecycle:lifecycle-runtime-ktx but with different version"
+        errorLine1="androidx-lifecycle-runtime-ktx = { group = &quot;androidx.lifecycle&quot;, name = &quot;lifecycle-runtime-ktx&quot;, version.ref = &quot;lifecycleRuntimeKtx&quot; }"
+        errorLine2="                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="62"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies org.jetbrains.kotlinx:kotlinx-coroutines-test but with different version"
+        errorLine1="kotlinx-coroutines-test = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-test&quot;, version.ref = &quot;kotlinxCoroutinesTest&quot; }"
+        errorLine2="                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="72"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies org.jetbrains.kotlinx:kotlinx-coroutines-test but with different version"
+        errorLine1="kotlinx-coroutines-test = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-test&quot;, version.ref = &quot;kotlinxCoroutinesTest&quot; }"
+        errorLine2="                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="72"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies org.jetbrains.kotlinx:kotlinx-coroutines-test but with different version"
+        errorLine1="kotlinx-coroutines-test = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-test&quot;, version.ref = &quot;kotlinxCoroutinesTest&quot; }"
+        errorLine2="                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="72"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies org.jetbrains.kotlinx:kotlinx-coroutines-test but with different version"
+        errorLine1="kotlinx-coroutines-test-v173 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-test&quot;, version.ref = &quot;kotlinxCoroutinesTestVersion&quot; }"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="73"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies org.jetbrains.kotlinx:kotlinx-coroutines-test but with different version"
+        errorLine1="kotlinx-coroutines-test-v173 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-test&quot;, version.ref = &quot;kotlinxCoroutinesTestVersion&quot; }"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="73"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies org.jetbrains.kotlinx:kotlinx-coroutines-test but with different version"
+        errorLine1="kotlinx-coroutines-test-v173 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-test&quot;, version.ref = &quot;kotlinxCoroutinesTestVersion&quot; }"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="73"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies org.mockito:mockito-core but with different version"
+        errorLine1="mockito-core = { module = &quot;org.mockito:mockito-core&quot;, version.ref = &quot;mockitoCore&quot; }"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="75"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies org.mockito:mockito-core but with different version"
+        errorLine1="mockito-core = { module = &quot;org.mockito:mockito-core&quot;, version.ref = &quot;mockitoCore&quot; }"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="75"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies org.mockito:mockito-core but with different version"
+        errorLine1="mockito-core = { module = &quot;org.mockito:mockito-core&quot;, version.ref = &quot;mockitoCore&quot; }"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="75"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies org.mockito:mockito-core but with different version"
+        errorLine1="mockito-core-v4110 = { module = &quot;org.mockito:mockito-core&quot;, version.ref = &quot;mockitoCoreVersion&quot; }"
+        errorLine2="                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="76"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies org.mockito:mockito-core but with different version"
+        errorLine1="mockito-core-v4110 = { module = &quot;org.mockito:mockito-core&quot;, version.ref = &quot;mockitoCoreVersion&quot; }"
+        errorLine2="                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="76"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies org.mockito:mockito-core but with different version"
+        errorLine1="mockito-core-v4110 = { module = &quot;org.mockito:mockito-core&quot;, version.ref = &quot;mockitoCoreVersion&quot; }"
+        errorLine2="                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="76"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.test:runner but with different version"
+        errorLine1="androidx-runner = { group = &quot;androidx.test&quot;, name = &quot;runner&quot;, version.ref = &quot;runner&quot; }"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="82"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.test:runner but with different version"
+        errorLine1="androidx-runner = { group = &quot;androidx.test&quot;, name = &quot;runner&quot;, version.ref = &quot;runner&quot; }"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="82"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="SimilarGradleDependency"
+        message="There are multiple dependencies androidx.test:runner but with different version"
+        errorLine1="androidx-runner = { group = &quot;androidx.test&quot;, name = &quot;runner&quot;, version.ref = &quot;runner&quot; }"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/code/android/HpGallery/gradle/libs.versions.toml"
+            line="82"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="KaptUsageInsteadOfKsp"
+        message="This library supports using KSP instead of kapt, which greatly improves performance. Learn more: https://developer.android.com/studio/build/migrate-to-ksp"
+        errorLine1="    kapt(libs.androidx.room.compiler)"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="101"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.purple_200` appears to be unused"
+        errorLine1="    &lt;color name=&quot;purple_200&quot;>#FFBB86FC&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="3"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.purple_500` appears to be unused"
+        errorLine1="    &lt;color name=&quot;purple_500&quot;>#FF6200EE&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="4"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.purple_700` appears to be unused"
+        errorLine1="    &lt;color name=&quot;purple_700&quot;>#FF3700B3&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="5"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.teal_200` appears to be unused"
+        errorLine1="    &lt;color name=&quot;teal_200&quot;>#FF03DAC5&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="6"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.teal_700` appears to be unused"
+        errorLine1="    &lt;color name=&quot;teal_700&quot;>#FF018786&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="7"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.black` appears to be unused"
+        errorLine1="    &lt;color name=&quot;black&quot;>#FF000000&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="8"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.white` appears to be unused"
+        errorLine1="    &lt;color name=&quot;white&quot;>#FFFFFFFF&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="9"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;search_hint&quot;>Search...&lt;/string>"
+        errorLine2="                               ~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="3"
+            column="32"/>
+    </issue>
+
+</issues>
