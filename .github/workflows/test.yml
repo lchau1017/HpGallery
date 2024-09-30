@@ -68,7 +68,6 @@ jobs:
           target: google_apis
           arch: x86_64
           profile: Nexus 6
-          script: ./gradlew connectedAndroidTest
           emulator-options: "-no-boot-anim -no-audio"
           disable-animations: true
       - name: Wait for Emulator to Boot
