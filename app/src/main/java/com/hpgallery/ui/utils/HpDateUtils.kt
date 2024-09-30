@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 
 object HpDateUtils {
-    // Constants for date formats and patterns
     private const val INPUT_DATE_FORMAT = "dd-MM-yyyy"
     private const val OUTPUT_DATE_FORMAT = "dd MMM yyyy"
     private const val UNKNOWN = "Unknown"
@@ -15,7 +14,6 @@ object HpDateUtils {
 
     fun formatDate(dateString: String?): String {
         return try {
-            // Check if dateString is null or empty
             if (dateString.isNullOrEmpty()) return UNKNOWN
 
             // If the date string is already in the output format, return it as is
@@ -33,7 +31,6 @@ object HpDateUtils {
             inputDateFormat.isLenient = false // Ensures strict date parsing
             val date = inputDateFormat.parse(dateString)
 
-            // Format the date to the output format
             val outputDateFormat = SimpleDateFormat(OUTPUT_DATE_FORMAT, Locale.getDefault())
             date?.let { outputDateFormat.format(it) } ?: UNKNOWN
         } catch (e: ParseException) {

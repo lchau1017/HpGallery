@@ -19,7 +19,6 @@ class HpCharacterDetailsCardTest {
 
     @Test
     fun hpCharacterDetailsCard_DisplaysCorrectInformation() {
-        // Sample test data
         val viewData = HpCharacterDetailsCardViewData(
             id = "1",
             name = "Harry Potter",
@@ -31,7 +30,6 @@ class HpCharacterDetailsCardTest {
             image = "https://example.com/harry_potter.jpg"
         )
 
-        // Set up the composable under test
         composeTestRule.setContent {
             HpGalleryTheme {
                 HpCharacterDetailsCard(
@@ -41,20 +39,17 @@ class HpCharacterDetailsCardTest {
             }
         }
 
-        // Assert that the character's name, actor, species, DOB, and status are displayed
         composeTestRule.onNodeWithText("Harry Potter").assertIsDisplayed()
         composeTestRule.onNodeWithText("Actor: Daniel Radcliffe").assertIsDisplayed()
         composeTestRule.onNodeWithText("Species: Human").assertIsDisplayed()
         composeTestRule.onNodeWithText("DOB: 31 July 1980").assertIsDisplayed()
         composeTestRule.onNodeWithText("Status: Alive").assertIsDisplayed()
 
-        // Assert that the image is displayed (by content description)
         composeTestRule.onNodeWithContentDescription("Harry Potter").assertIsDisplayed()
     }
 
     @Test
     fun hpCharacterDetailsCard_HidesImage_WhenUrlIsNullOrEmpty() {
-        // Sample test data without an image
         val viewData = HpCharacterDetailsCardViewData(
             id = "1",
             name = "Hermione Granger",
@@ -66,7 +61,6 @@ class HpCharacterDetailsCardTest {
             image = null // No image provided
         )
 
-        // Set up the composable under test
         composeTestRule.setContent {
             HpGalleryTheme {
                 HpCharacterDetailsCard(
@@ -76,14 +70,12 @@ class HpCharacterDetailsCardTest {
             }
         }
 
-        // Assert that the character's name and other details are displayed
         composeTestRule.onNodeWithText("Hermione Granger").assertIsDisplayed()
         composeTestRule.onNodeWithText("Actor: Emma Watson").assertIsDisplayed()
         composeTestRule.onNodeWithText("Species: Human").assertIsDisplayed()
         composeTestRule.onNodeWithText("DOB: 19 September 1979").assertIsDisplayed()
         composeTestRule.onNodeWithText("Status: Alive").assertIsDisplayed()
 
-        // Assert that there is no image node with the content description "Hermione Granger"
         composeTestRule.onNodeWithContentDescription("Hermione Granger").assertDoesNotExist()
     }
 }

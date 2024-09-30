@@ -45,7 +45,7 @@ fun HpSearchBar(
                 },
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(24.dp), // Rounded corners for the search bar
+                shape = RoundedCornerShape(24.dp),
                 trailingIcon = {
                     if (query.isNotEmpty()) {
                         IconButton(onClick = { onQueryChange("") }) {

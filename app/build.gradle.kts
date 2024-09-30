@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
-    id("app.cash.paparazzi") version "1.3.4" // Use the latest version available
+    id("app.cash.paparazzi") version "1.3.4"
 }
 
 android {
@@ -112,7 +112,6 @@ dependencies {
     // Coroutines for testing
     androidTestImplementation(libs.kotlinx.coroutines.test)
 
-    // For Mockito if needed
     androidTestImplementation(libs.mockito.core.v4110)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)

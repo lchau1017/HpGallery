@@ -29,7 +29,6 @@ class AppViewModel @Inject constructor(
         )
     val isDarkTheme: StateFlow<Boolean> = _isDarkTheme
 
-    // Emit different events based on user actions
     fun onBackPressed() {
         viewModelScope.launch {
             _uiEvent.emit(UiEvent.BackPress)

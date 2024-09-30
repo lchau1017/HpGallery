@@ -24,11 +24,9 @@ fun AppNavigation(
     val navController = rememberNavController()
     val isDarkTheme by appViewModel.isDarkTheme.collectAsState()
 
-    // Initialize ViewModels here in the top-level composable
     val listViewModel: HpCharacterListViewModel = hiltViewModel()
     val detailsViewModel: HpCharacterDetailsViewModel = hiltViewModel()
 
-    // Extract viewData and states from the ViewModels
     val hpCharacterListState by listViewModel.hpCharacterListState.collectAsState()
     val searchQuery by listViewModel.searchQuery.collectAsState()
     val hpCharacterDetailsState by detailsViewModel.hpCharacterDetailsState.collectAsState()
@@ -64,7 +62,6 @@ fun AppNavigation(
             })
         ) { backStackEntry ->
             val characterId = backStackEntry.arguments?.getString(NavigationRoutes.CHARACTER_ID_ARG)
-            // Fetch details based on characterId if necessary
             if (characterId != null) {
                 detailsViewModel.loadCharacterDetails(characterId)
             }

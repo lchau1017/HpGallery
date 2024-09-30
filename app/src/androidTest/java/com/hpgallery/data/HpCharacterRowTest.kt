@@ -20,7 +20,6 @@ class HpCharacterRowTest {
 
     @Test
     fun hpCharacterRow_DisplaysCorrectInformation() {
-        // Sample test data
         val viewData = HpCharacterRowViewData(
             id = "1",
             name = "Harry Potter",
@@ -32,7 +31,6 @@ class HpCharacterRowTest {
         // Set a flag to check if the onClick callback is triggered
         var clicked = false
 
-        // Set up the composable under test
         composeTestRule.setContent {
             HpGalleryTheme {
                 HpCharacterRow(
@@ -43,15 +41,12 @@ class HpCharacterRowTest {
             }
         }
 
-        // Assert that the character name, actor, and species are displayed
         composeTestRule.onNodeWithText("Harry Potter").assertIsDisplayed()
         composeTestRule.onNodeWithText("Actor: Daniel Radcliffe").assertIsDisplayed()
         composeTestRule.onNodeWithText("Species: Human").assertIsDisplayed()
 
-        // Simulate a click on the row
         composeTestRule.onNodeWithText("Harry Potter").performClick()
 
-        // Assert that the click callback was triggered
         assert(clicked)
     }
 }

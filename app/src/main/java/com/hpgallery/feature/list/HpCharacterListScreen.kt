@@ -44,7 +44,7 @@ fun HpCharacterListScreen(
     }
     Scaffold(topBar = {
         HpSearchBar(query = searchQuery, onQueryChange = { query ->
-            searchQuery = query // Update the local mutable state
+            searchQuery = query
         })
     }, floatingActionButton = {
         HpFloatingActionButton(isDarkTheme, onToggleTheme)
