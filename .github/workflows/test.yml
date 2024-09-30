@@ -51,7 +51,7 @@ jobs:
 
   instrumented-test:
     name: Instrumented Tests
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -61,7 +61,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: gradle
-      - name: Run Instrumented Tests
+      - name: Start Emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
@@ -69,6 +69,12 @@ jobs:
           arch: x86_64
           profile: Nexus 6
           script: ./gradlew connectedAndroidTest
+          emulator-options: "-no-boot-anim -no-audio"
+          disable-animations: true
+      - name: Wait for Emulator to Boot
+        run: adb wait-for-device
+      - name: Run Instrumented Tests
+        run: ./gradlew connectedAndroidTest
       - name: Upload Instrumented Test Results
         uses: actions/upload-artifact@v3
         if: always()
