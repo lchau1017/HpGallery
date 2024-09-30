@@ -2,9 +2,9 @@ package com.hpgallery.domain.usecase
 
 import com.hpgallery.domain.model.HpCharacter
 import com.hpgallery.domain.repository.HpCharacterRepository
-import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
 class SearchHpCharactersUseCase @Inject constructor(private val repository: HpCharacterRepository) {
     suspend operator fun invoke(query: String): Flow<List<HpCharacter>> {

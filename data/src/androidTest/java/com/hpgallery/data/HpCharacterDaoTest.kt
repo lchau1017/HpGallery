@@ -28,9 +28,7 @@ class HpCharacterDaoTest {
         database = Room.inMemoryDatabaseBuilder(
             context,
             AppDatabase::class.java
-        )
-            .allowMainThreadQueries()
-            .build()
+        ).allowMainThreadQueries().build()
         characterDao = database.hpCharacterDao()
     }
 

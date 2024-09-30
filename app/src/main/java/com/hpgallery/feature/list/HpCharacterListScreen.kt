@@ -37,14 +37,14 @@ fun HpCharacterListScreen(
     onCharacterClick: (String) -> Unit,
     onToggleTheme: () -> Unit
 ) {
-    var searchQuery by rememberSaveable { mutableStateOf(searchQuery) }
+    var searchQueryState by rememberSaveable { mutableStateOf(searchQuery) }
     // Sync the local search query state with the ViewModel's state
     LaunchedEffect(searchQuery) {
         updateSearchQuery(searchQuery)
     }
     Scaffold(topBar = {
         HpSearchBar(query = searchQuery, onQueryChange = { query ->
-            searchQuery = query
+            searchQueryState = query
         })
     }, floatingActionButton = {
             HpFloatingActionButton(isDarkTheme, onToggleTheme)

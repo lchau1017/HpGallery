@@ -52,9 +52,6 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    testOptions {
-        unitTests.isIncludeAndroidResources = true
-    }
     lint {
         disable += "TypographyFractions" + "TypographyQuotes"
         baseline = file("lint-baseline.xml")
@@ -76,6 +73,7 @@ ktlint {
 
 dependencies {
     implementation(project(":domain"))
+    implementation(project(":data"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -91,21 +89,13 @@ dependencies {
 
     implementation(libs.ui.tooling)
     implementation(libs.ui.tooling.preview)
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation(libs.okhttp)
-    implementation(libs.logging.interceptor)
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.junit.ktx)
     implementation(libs.androidx.runner)
-    kapt(libs.androidx.room.compiler)
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.timber)
-    implementation(libs.androidx.datastore.preferences)
 
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
@@ -123,9 +113,6 @@ dependencies {
     androidTestImplementation(libs.androidx.core)
     androidTestImplementation(libs.androidx.runner.v152)
     androidTestImplementation(libs.androidx.rules)
-
-    // Room testing
-    androidTestImplementation(libs.room.testing)
 
     // Coroutines for testing
     androidTestImplementation(libs.kotlinx.coroutines.test)

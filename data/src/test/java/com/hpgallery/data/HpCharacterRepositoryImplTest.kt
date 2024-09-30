@@ -1,4 +1,4 @@
-package com.hpgallery.data.repository
+package com.hpgallery.data
 
 import com.hpgallery.data.local.HpCharacterDao
 import com.hpgallery.data.local.HpCharacterEntity
@@ -6,6 +6,7 @@ import com.hpgallery.data.mapper.toDomainModel
 import com.hpgallery.data.mapper.toEntity
 import com.hpgallery.data.remote.HpApiService
 import com.hpgallery.data.remote.HpCharacterResponse
+import com.hpgallery.data.repository.HpCharacterRepositoryImpl
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
@@ -14,7 +15,6 @@ import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
-
 @OptIn(ExperimentalCoroutinesApi::class)
 class HpCharacterRepositoryImplTest {
 
