@@ -26,11 +26,13 @@ import com.hpgallery.ui.utils.DualModePreview
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HpSearchBar(
-    query: String, onQueryChange: (String) -> Unit
+    query: String,
+    onQueryChange: (String) -> Unit
 ) {
-    CenterAlignedTopAppBar(modifier = Modifier.padding(8.dp),
+    CenterAlignedTopAppBar(
+        modifier = Modifier.padding(8.dp),
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = Color.Transparent,
+            containerColor = Color.Transparent
         ),
         title = {
             OutlinedTextField(
@@ -51,7 +53,9 @@ fun HpSearchBar(
                         IconButton(onClick = { onQueryChange("") }) {
                             Icon(
                                 imageVector = Icons.Filled.Clear,
-                                contentDescription = stringResource(id = R.string.clear_text_description)
+                                contentDescription = stringResource(
+                                    id = R.string.clear_text_description
+                                )
                             )
                         }
                     }
@@ -75,11 +79,12 @@ fun HpSearchBar(
                     cursorColor = LocalColourScheme.current.textPrimary,
                     focusedTrailingIconColor = LocalColourScheme.current.textSecondary,
                     unfocusedTrailingIconColor = LocalColourScheme.current.textSecondary,
-                    disabledTrailingIconColor = LocalColourScheme.current.textSecondary,
+                    disabledTrailingIconColor = LocalColourScheme.current.textSecondary
                 ),
                 textStyle = LocalTypography.current.headingSecondaryMedium
             )
-        })
+        }
+    )
 }
 
 @DualModePreview

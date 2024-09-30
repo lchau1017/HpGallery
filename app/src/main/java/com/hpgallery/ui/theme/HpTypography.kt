@@ -17,7 +17,7 @@ data class HpTypography(
     val headingPrimarySmall: TextStyle = TextStyle(),
     val headingSecondaryLarge: TextStyle = TextStyle(),
     val headingSecondaryMedium: TextStyle = TextStyle(),
-    val labelSmall: TextStyle = TextStyle(),
+    val labelSmall: TextStyle = TextStyle()
 )
 
 @Composable
@@ -29,7 +29,7 @@ fun hpTypography(colourScheme: ColourScheme): HpTypography {
             lineHeight = 32.2.sp,
             fontWeight = FontWeight.W600,
             color = colourScheme.textPrimary,
-            lineBreak = LineBreak.Heading,
+            lineBreak = LineBreak.Heading
         ),
         headingPrimarySmall = TextStyle(
             fontFamily = FontFamily(Font(R.font.headline_semibold)),
@@ -37,7 +37,7 @@ fun hpTypography(colourScheme: ColourScheme): HpTypography {
             lineHeight = 19.55.sp,
             fontWeight = FontWeight.W600,
             color = colourScheme.textPrimary,
-            lineBreak = LineBreak.Heading,
+            lineBreak = LineBreak.Heading
         ),
         headingSecondaryLarge = TextStyle(
             fontFamily = FontFamily(Font(R.font.headline_medium)),
@@ -45,7 +45,7 @@ fun hpTypography(colourScheme: ColourScheme): HpTypography {
             lineHeight = 32.2.sp,
             fontWeight = FontWeight.W500,
             color = colourScheme.textPrimary,
-            lineBreak = LineBreak.Heading,
+            lineBreak = LineBreak.Heading
         ),
         headingSecondaryMedium = TextStyle(
             fontFamily = FontFamily(Font(R.font.headline_medium)),
@@ -53,7 +53,7 @@ fun hpTypography(colourScheme: ColourScheme): HpTypography {
             lineHeight = 27.6.sp,
             fontWeight = FontWeight.W500,
             color = colourScheme.textPrimary,
-            lineBreak = LineBreak.Heading,
+            lineBreak = LineBreak.Heading
         ),
 
         labelSmall = TextStyle(
@@ -62,8 +62,8 @@ fun hpTypography(colourScheme: ColourScheme): HpTypography {
             lineHeight = 18.2.sp,
             fontWeight = FontWeight.W500,
             color = colourScheme.textPrimary,
-            lineBreak = LineBreak.Simple,
-        ),
+            lineBreak = LineBreak.Simple
+        )
     )
 }
 

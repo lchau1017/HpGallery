@@ -1,7 +1,14 @@
 package com.hpgallery.feature.details
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,20 +27,23 @@ import com.hpgallery.ui.utils.HouseColorUtils
 
 @Composable
 fun HpCharacterDetailsCard(
-    viewData: HpCharacterDetailsCardViewData, modifier: Modifier = Modifier
+    viewData: HpCharacterDetailsCardViewData,
+    modifier: Modifier = Modifier
 ) {
     Card(
-        shape = HpShapes.medium, modifier = modifier.padding(16.dp)
+        shape = HpShapes.medium,
+        modifier = modifier.padding(16.dp)
     ) {
         Column(
             modifier = Modifier
                 .background(LocalColourScheme.current.backgroundSecondary)
                 .fillMaxSize()
-                .padding(16.dp),
+                .padding(16.dp)
         ) {
             val houseColor = HouseColorUtils.getHouseColor(viewData.house)
             HpHouseColorIndicator(
-                color = houseColor, modifier = Modifier.padding(end = 8.dp)
+                color = houseColor,
+                modifier = Modifier.padding(end = 8.dp)
             )
             Column(
                 modifier = Modifier
@@ -54,36 +64,35 @@ fun HpCharacterDetailsCard(
                 HpText(
                     text = viewData.name,
                     style = LocalTypography.current.headingPrimaryLarge,
-                    color = LocalTypography.current.headingPrimaryLarge.color,
+                    color = LocalTypography.current.headingPrimaryLarge.color
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 HpText(
                     text = "Actor: ${viewData.actor}",
                     style = LocalTypography.current.headingSecondaryLarge,
-                    color = LocalTypography.current.headingSecondaryLarge.color,
+                    color = LocalTypography.current.headingSecondaryLarge.color
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 HpText(
                     text = "Species: ${viewData.species}",
                     style = LocalTypography.current.labelSmall,
-                    color = LocalTypography.current.labelSmall.color,
+                    color = LocalTypography.current.labelSmall.color
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 HpText(
                     text = "DOB: ${viewData.dateOfBirth}",
                     style = LocalTypography.current.labelSmall,
-                    color = LocalTypography.current.labelSmall.color,
+                    color = LocalTypography.current.labelSmall.color
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 HpText(
                     text = "Status: ${viewData.status}",
                     style = LocalTypography.current.labelSmall,
-                    color = LocalTypography.current.labelSmall.color,
+                    color = LocalTypography.current.labelSmall.color
                 )
             }
         }
     }
-
 }
 
 @DualModePreview

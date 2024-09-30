@@ -47,8 +47,8 @@ fun HpCharacterListScreen(
             searchQuery = query
         })
     }, floatingActionButton = {
-        HpFloatingActionButton(isDarkTheme, onToggleTheme)
-    }) { paddingValues ->
+            HpFloatingActionButton(isDarkTheme, onToggleTheme)
+        }) { paddingValues ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -76,7 +76,6 @@ fun HpCharacterListScreen(
     }
 }
 
-
 @Composable
 fun CharacterList(characterList: List<HpCharacterRowViewData>, onCharacterClick: (String) -> Unit) {
     LazyColumn(modifier = Modifier.fillMaxSize()) {
@@ -92,18 +91,24 @@ fun CharacterList(characterList: List<HpCharacterRowViewData>, onCharacterClick:
 @Composable
 fun HpCharacterListScreenSuccessPreview() {
     HpGalleryTheme {
-        HpCharacterListScreen(isDarkTheme = false,
+        HpCharacterListScreen(
+            isDarkTheme = false,
             viewData = HpCharacterListViewData.Success(
                 listOf(
                     HpCharacterRowViewData(
-                        "1", "Harry Potter", "Daniel Radcliffe", "Wizard", "Gryffindor"
+                        "1",
+                        "Harry Potter",
+                        "Daniel Radcliffe",
+                        "Wizard",
+                        "Gryffindor"
                     )
                 )
             ),
             searchQuery = "Harry Potter",
             updateSearchQuery = { /* Do nothing */ },
-            onCharacterClick = {/* Do nothing */ },
-            onToggleTheme = { /* Do nothing */ })
+            onCharacterClick = { /* Do nothing */ },
+            onToggleTheme = { /* Do nothing */ }
+        )
     }
 }
 
@@ -111,12 +116,14 @@ fun HpCharacterListScreenSuccessPreview() {
 @Composable
 fun HpCharacterListScreenLoadingPreview() {
     HpGalleryTheme {
-        HpCharacterListScreen(isDarkTheme = false,
+        HpCharacterListScreen(
+            isDarkTheme = false,
             viewData = HpCharacterListViewData.Loading,
             searchQuery = "Harry Potter",
             updateSearchQuery = { /* Do nothing */ },
-            onCharacterClick = {/* Do nothing */ },
-            onToggleTheme = { /* Do nothing */ })
+            onCharacterClick = { /* Do nothing */ },
+            onToggleTheme = { /* Do nothing */ }
+        )
     }
 }
 
@@ -124,12 +131,14 @@ fun HpCharacterListScreenLoadingPreview() {
 @Composable
 fun HpCharacterListScreenEmptyPreview() {
     HpGalleryTheme {
-        HpCharacterListScreen(isDarkTheme = false,
+        HpCharacterListScreen(
+            isDarkTheme = false,
             viewData = HpCharacterListViewData.Empty,
             searchQuery = "Harry Potter",
             updateSearchQuery = { /* Do nothing */ },
-            onCharacterClick = {/* Do nothing */ },
-            onToggleTheme = { /* Do nothing */ })
+            onCharacterClick = { /* Do nothing */ },
+            onToggleTheme = { /* Do nothing */ }
+        )
     }
 }
 
@@ -137,13 +146,15 @@ fun HpCharacterListScreenEmptyPreview() {
 @Composable
 fun HpCharacterListScreenErrorPreview() {
     HpGalleryTheme {
-        HpCharacterListScreen(isDarkTheme = false,
+        HpCharacterListScreen(
+            isDarkTheme = false,
             viewData = HpCharacterListViewData.Error(
                 HpCharacterListErrorViewData("An error occurred")
             ),
             searchQuery = "Harry Potter",
             updateSearchQuery = { /* Do nothing */ },
-            onCharacterClick = {/* Do nothing */ },
-            onToggleTheme = { /* Do nothing */ })
+            onCharacterClick = { /* Do nothing */ },
+            onToggleTheme = { /* Do nothing */ }
+        )
     }
 }

@@ -1,6 +1,5 @@
 package com.hpgallery.domain.usecase
 
-
 import com.hpgallery.domain.repository.HpPreferencesRepository
 import javax.inject.Inject
 

@@ -37,26 +37,30 @@ fun HpCharacterDetailsScreen(
     onToggleTheme: () -> Unit
 ) {
     Scaffold(topBar = {
-        TopAppBar(colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = LocalColourScheme.current.backgroundPrimary
-        ), title = {
-            HpText(
-                text = stringResource(id = R.string.details_title),
-                color = LocalColourScheme.current.textPrimary,
-                style = LocalTypography.current.headingSecondaryMedium
-            )
-        }, navigationIcon = {
-            IconButton(onClick = { onBackClick() }) {
-                Icon(
-                    imageVector = Icons.Default.ArrowBack,
-                    contentDescription = "Back",
-                    tint = LocalColourScheme.current.textPrimary
+        TopAppBar(
+            colors = TopAppBarDefaults.topAppBarColors(
+                containerColor = LocalColourScheme.current.backgroundPrimary
+            ),
+            title = {
+                HpText(
+                    text = stringResource(id = R.string.details_title),
+                    color = LocalColourScheme.current.textPrimary,
+                    style = LocalTypography.current.headingSecondaryMedium
                 )
+            },
+            navigationIcon = {
+                IconButton(onClick = { onBackClick() }) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowBack,
+                        contentDescription = "Back",
+                        tint = LocalColourScheme.current.textPrimary
+                    )
+                }
             }
-        })
+        )
     }, floatingActionButton = {
-        HpFloatingActionButton(isDarkTheme, onToggleTheme)
-    }) { paddingValues ->
+            HpFloatingActionButton(isDarkTheme, onToggleTheme)
+        }) { paddingValues ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -89,18 +93,23 @@ fun CharacterDetails(characterDetails: HpCharacterDetailsCardViewData) {
 @Composable
 fun HpCharacterDetailsScreenSuccessPreview() {
     HpGalleryTheme {
-        HpCharacterDetailsScreen(isDarkTheme = false, viewData = HpCharacterDetailsViewData.Success(
-            HpCharacterDetailsCardViewData(
-                id = "1",
-                name = "Harry Potter",
-                actor = "Daniel Radcliffe",
-                species = "Human",
-                dateOfBirth = "31 July 1980",
-                status = "Alive",
-                house = "Gryffindor",
-                image = "https://hp-api.herokuapp.com/images/harry.jpg"
-            )
-        ), onBackClick = { /* Do nothing */ }, onToggleTheme = { /* Do nothing */ })
+        HpCharacterDetailsScreen(
+            isDarkTheme = false,
+            viewData = HpCharacterDetailsViewData.Success(
+                HpCharacterDetailsCardViewData(
+                    id = "1",
+                    name = "Harry Potter",
+                    actor = "Daniel Radcliffe",
+                    species = "Human",
+                    dateOfBirth = "31 July 1980",
+                    status = "Alive",
+                    house = "Gryffindor",
+                    image = "https://hp-api.herokuapp.com/images/harry.jpg"
+                )
+            ),
+            onBackClick = { /* Do nothing */ },
+            onToggleTheme = { /* Do nothing */ }
+        )
     }
 }
 
@@ -108,9 +117,14 @@ fun HpCharacterDetailsScreenSuccessPreview() {
 @Composable
 fun HpCharacterDetailsScreenErrorPreview() {
     HpGalleryTheme {
-        HpCharacterDetailsScreen(isDarkTheme = false, viewData = HpCharacterDetailsViewData.Error(
-            HpCharacterDetailsErrorViewData("An error occurred")
-        ), onBackClick = { /* Do nothing */ }, onToggleTheme = { /* Do nothing */ })
+        HpCharacterDetailsScreen(
+            isDarkTheme = false,
+            viewData = HpCharacterDetailsViewData.Error(
+                HpCharacterDetailsErrorViewData("An error occurred")
+            ),
+            onBackClick = { /* Do nothing */ },
+            onToggleTheme = { /* Do nothing */ }
+        )
     }
 }
 
@@ -118,9 +132,11 @@ fun HpCharacterDetailsScreenErrorPreview() {
 @Composable
 fun HpCharacterDetailsScreenEmptyPreview() {
     HpGalleryTheme {
-        HpCharacterDetailsScreen(isDarkTheme = false,
+        HpCharacterDetailsScreen(
+            isDarkTheme = false,
             viewData = HpCharacterDetailsViewData.Empty,
             onBackClick = { /* Do nothing */ },
-            onToggleTheme = { /* Do nothing */ })
+            onToggleTheme = { /* Do nothing */ }
+        )
     }
 }

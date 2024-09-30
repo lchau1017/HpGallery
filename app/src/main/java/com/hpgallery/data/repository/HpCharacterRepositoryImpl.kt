@@ -9,7 +9,8 @@ import com.hpgallery.domain.repository.HpCharacterRepository
 import javax.inject.Inject
 
 class HpCharacterRepositoryImpl @Inject constructor(
-    private val hpApiService: HpApiService, private val hpCharacterDao: HpCharacterDao
+    private val hpApiService: HpApiService,
+    private val hpCharacterDao: HpCharacterDao
 ) : HpCharacterRepository {
 
     override suspend fun getHpCharacters(): List<HpCharacter> {

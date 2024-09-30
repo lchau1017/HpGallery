@@ -15,6 +15,6 @@ fun HpGalleryTheme(
         LocalColourScheme provides colourPalette,
         LocalTypography provides typography,
         LocalShapes provides HpShapes,
-        content = content,
+        content = content
     )
 }

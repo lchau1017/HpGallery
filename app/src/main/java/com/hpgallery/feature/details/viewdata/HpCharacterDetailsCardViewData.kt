@@ -8,5 +8,5 @@ data class HpCharacterDetailsCardViewData(
     val house: String?,
     val dateOfBirth: String?,
     val image: String?,
-    val status: String,
+    val status: String
 )

@@ -5,10 +5,10 @@ sealed interface HpCharacterDetailsViewData {
     data object Empty : HpCharacterDetailsViewData
 
     data class Error(
-        val hpCharacterDetailsErrorViewData: HpCharacterDetailsErrorViewData,
+        val hpCharacterDetailsErrorViewData: HpCharacterDetailsErrorViewData
     ) : HpCharacterDetailsViewData
 
     data class Success(
-        val hpCharacterDetailsCardViewData: HpCharacterDetailsCardViewData,
+        val hpCharacterDetailsCardViewData: HpCharacterDetailsCardViewData
     ) : HpCharacterDetailsViewData
 }

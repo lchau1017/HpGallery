@@ -4,6 +4,7 @@ plugins {
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
     id("app.cash.paparazzi") version "1.3.4"
+    id("org.jlleitschuh.gradle.ktlint")
 }
 
 android {
@@ -54,6 +55,23 @@ android {
     testOptions {
         unitTests.isIncludeAndroidResources = true
     }
+    lint {
+        disable += "TypographyFractions" + "TypographyQuotes"
+        baseline = file("lint-baseline.xml")
+    }
+}
+
+ktlint {
+    android.set(true)
+    ignoreFailures.set(false)
+    reporters {
+        reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.PLAIN)
+        reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.CHECKSTYLE)
+    }
+    filter {
+        exclude("**/generated/**")
+        include("**/kotlin/**")
+    }
 }
 
 dependencies {
@@ -88,7 +106,6 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.androidx.datastore.preferences)
 
-
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockk)
@@ -116,8 +133,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     // Jetpack Compose UI Testing
-    androidTestImplementation (libs.ui.test.junit4)
-    debugImplementation (libs.ui.tooling)
+    androidTestImplementation(libs.ui.test.junit4)
+    debugImplementation(libs.ui.tooling)
 }
 // Allow references to generated code
 kapt {

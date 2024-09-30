@@ -16,7 +16,7 @@ import org.junit.Before
 import org.junit.Test
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class CharacterRepositoryImplTest {
+class HpCharacterRepositoryImplTest {
 
     private lateinit var repository: HpCharacterRepositoryImpl
     private val apiService: HpApiService = mockk()

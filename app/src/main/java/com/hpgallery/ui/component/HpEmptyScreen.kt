@@ -15,18 +15,19 @@ private const val EMPTY_STATE_MESSAGE =
 
 @Composable
 fun HpEmptyScreen(
-    emptyMessage: String = EMPTY_STATE_MESSAGE,
+    emptyMessage: String = EMPTY_STATE_MESSAGE
 ) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(8.dp), contentAlignment = Alignment.Center
+            .padding(8.dp),
+        contentAlignment = Alignment.Center
     ) {
         HpText(
             textAlign = TextAlign.Center,
             text = emptyMessage,
             style = LocalTypography.current.headingPrimaryLarge,
-            color = LocalTypography.current.headingPrimaryLarge.color,
+            color = LocalTypography.current.headingPrimaryLarge.color
         )
     }
 }

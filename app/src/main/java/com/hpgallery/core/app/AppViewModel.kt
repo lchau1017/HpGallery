@@ -6,12 +6,12 @@ import com.hpgallery.core.event.UiEvent
 import com.hpgallery.domain.usecase.GetThemePreferenceUseCase
 import com.hpgallery.domain.usecase.SaveThemePreferenceUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
-import kotlinx.coroutines.launch
-import javax.inject.Inject
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 @HiltViewModel
 class AppViewModel @Inject constructor(
@@ -23,10 +23,10 @@ class AppViewModel @Inject constructor(
     val uiEvent = _uiEvent.asSharedFlow()
 
     private val _isDarkTheme = getThemePreferenceUseCase().stateIn(
-            scope = viewModelScope,
-            started = kotlinx.coroutines.flow.SharingStarted.WhileSubscribed(5000),
-            initialValue = false
-        )
+        scope = viewModelScope,
+        started = kotlinx.coroutines.flow.SharingStarted.WhileSubscribed(5000),
+        initialValue = false
+    )
     val isDarkTheme: StateFlow<Boolean> = _isDarkTheme
 
     fun onBackPressed() {
@@ -47,5 +47,4 @@ class AppViewModel @Inject constructor(
             saveThemePreferenceUseCase(newTheme)
         }
     }
-
 }

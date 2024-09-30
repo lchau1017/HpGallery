@@ -24,14 +24,12 @@ class HpCharacterDetailsScreenshotTest {
         }
     }
 
-
     @Test
     fun testHpCharacterDetailsScreenError() {
         paparazzi.snapshot {
             HpCharacterDetailsScreenErrorPreview()
         }
     }
-
 
     @Test
     fun testHpCharacterDetailsScreenEmpty() {

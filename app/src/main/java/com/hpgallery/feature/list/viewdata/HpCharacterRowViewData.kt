@@ -5,5 +5,5 @@ data class HpCharacterRowViewData(
     val name: String,
     val actor: String,
     val species: String,
-    val house: String?,
+    val house: String?
 )

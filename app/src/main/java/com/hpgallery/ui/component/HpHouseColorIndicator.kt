@@ -15,14 +15,17 @@ import com.hpgallery.ui.utils.DualModePreview
 
 @Composable
 fun HpHouseColorIndicator(
-    color: Color, modifier: Modifier = Modifier
+    color: Color,
+    modifier: Modifier = Modifier
 ) {
-    Surface(modifier = modifier
-        .size(16.dp)
-        .background(color, CircleShape),
+    Surface(
+        modifier = modifier
+            .size(16.dp)
+            .background(color, CircleShape),
         shape = CircleShape,
         color = color,
-        content = {})
+        content = {}
+    )
 }
 
 @DualModePreview

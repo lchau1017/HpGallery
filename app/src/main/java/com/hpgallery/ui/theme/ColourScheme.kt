@@ -19,7 +19,7 @@ data class ColourScheme(
     val gryffindor: Color,
     val slytherin: Color,
     val ravenclaw: Color,
-    val hufflepuff: Color,
+    val hufflepuff: Color
 )
 
 fun lightColourPalette(): ColourScheme = ColourScheme(
@@ -36,7 +36,7 @@ fun lightColourPalette(): ColourScheme = ColourScheme(
     gryffindor = GryffindorColor,
     slytherin = SlytherinColor,
     ravenclaw = RavenclawColor,
-    hufflepuff = HufflepuffColor,
+    hufflepuff = HufflepuffColor
 )
 
 fun darkColourPalette(): ColourScheme = ColourScheme(
@@ -53,7 +53,7 @@ fun darkColourPalette(): ColourScheme = ColourScheme(
     gryffindor = GryffindorLightColor,
     slytherin = SlytherinLightColor,
     ravenclaw = RavenclawLightColor,
-    hufflepuff = HufflepuffLightColor,
+    hufflepuff = HufflepuffLightColor
 )
 
 val LocalColourScheme = staticCompositionLocalOf { lightColourPalette() }

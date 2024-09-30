@@ -12,14 +12,13 @@ class HpCharacterDetailsCardScreenshotTest {
     @get:Rule
     val coroutineTestRule = CoroutineTestRule()
 
-
     @get:Rule
     val paparazzi = Paparazzi(deviceConfig = DeviceConfig.PIXEL_5)
 
     @Test
     fun hpCharacterDetailsCard() {
-            paparazzi.snapshot {
-                HpCharacterDetailsCardPreview()
-            }
+        paparazzi.snapshot {
+            HpCharacterDetailsCardPreview()
+        }
     }
 }

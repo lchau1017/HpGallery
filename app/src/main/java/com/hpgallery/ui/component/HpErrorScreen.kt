@@ -11,7 +11,6 @@ import androidx.compose.ui.unit.dp
 import com.hpgallery.ui.theme.LocalColourScheme
 import com.hpgallery.ui.theme.LocalTypography
 
-
 @Composable
 fun HpErrorScreen(
     errorMessage: String
@@ -19,13 +18,14 @@ fun HpErrorScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(8.dp), contentAlignment = Alignment.Center
+            .padding(8.dp),
+        contentAlignment = Alignment.Center
     ) {
         HpText(
             textAlign = TextAlign.Center,
             text = errorMessage,
             style = LocalTypography.current.headingPrimaryLarge,
-            color = LocalColourScheme.current.error,
+            color = LocalColourScheme.current.error
         )
     }
 }

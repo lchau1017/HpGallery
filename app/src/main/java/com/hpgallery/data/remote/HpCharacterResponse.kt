@@ -1,6 +1,5 @@
 package com.hpgallery.data.remote
 
-
 data class HpCharacterResponse(
     val id: String,
     val name: String,

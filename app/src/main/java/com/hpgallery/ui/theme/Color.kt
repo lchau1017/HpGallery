@@ -13,7 +13,6 @@ val hp_neutral97 = Color(color = 0xFFF9F9F5)
 val hp_neutral100 = Color(color = 0xFFFAFAFA)
 val error = Color(color = 0xFF00FF00)
 
-
 val purple_80 = Color(0xFFD0BCFF)
 val purple_40 = Color(0xFF6650a4)
 

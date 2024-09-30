@@ -19,7 +19,7 @@ import com.hpgallery.feature.list.HpCharacterListViewModel
 
 @Composable
 fun AppNavigation(
-    appViewModel: AppViewModel,
+    appViewModel: AppViewModel
 ) {
     val navController = rememberNavController()
     val isDarkTheme by appViewModel.isDarkTheme.collectAsState()
@@ -40,7 +40,9 @@ fun AppNavigation(
                 }
 
                 is UiEvent.NavigateToCharacterDetail -> {
-                    navController.navigate("${NavigationRoutes.CHARACTER_DETAIL}/${event.characterId}")
+                    navController.navigate(
+                        "${NavigationRoutes.CHARACTER_DETAIL}/${event.characterId}"
+                    )
                 }
             }
         }
@@ -48,28 +50,34 @@ fun AppNavigation(
 
     NavHost(navController = navController, startDestination = NavigationRoutes.CHARACTER_LIST) {
         composable(NavigationRoutes.CHARACTER_LIST) {
-            HpCharacterListScreen(isDarkTheme = isDarkTheme,
+            HpCharacterListScreen(
+                isDarkTheme = isDarkTheme,
                 viewData = hpCharacterListState,
                 searchQuery = searchQuery,
                 updateSearchQuery = { query -> listViewModel.updateSearchQuery(query) },
                 onCharacterClick = { characterId -> appViewModel.onCharacterClicked(characterId) },
-                onToggleTheme = { appViewModel.toggleTheme() })
+                onToggleTheme = { appViewModel.toggleTheme() }
+            )
         }
         composable(
             route = "${NavigationRoutes.CHARACTER_DETAIL}/{${NavigationRoutes.CHARACTER_ID_ARG}}",
-            arguments = listOf(navArgument(NavigationRoutes.CHARACTER_ID_ARG) {
-                type = NavType.StringType
-            })
+            arguments = listOf(
+                navArgument(NavigationRoutes.CHARACTER_ID_ARG) {
+                    type = NavType.StringType
+                }
+            )
         ) { backStackEntry ->
             val characterId = backStackEntry.arguments?.getString(NavigationRoutes.CHARACTER_ID_ARG)
             if (characterId != null) {
                 detailsViewModel.loadCharacterDetails(characterId)
             }
 
-            HpCharacterDetailsScreen(viewData = hpCharacterDetailsState,
+            HpCharacterDetailsScreen(
+                viewData = hpCharacterDetailsState,
                 isDarkTheme = isDarkTheme,
                 onBackClick = { appViewModel.onBackPressed() },
-                onToggleTheme = { appViewModel.toggleTheme() })
+                onToggleTheme = { appViewModel.toggleTheme() }
+            )
         }
     }
 }

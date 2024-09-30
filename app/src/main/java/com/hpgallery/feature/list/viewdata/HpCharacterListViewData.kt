@@ -7,10 +7,10 @@ sealed interface HpCharacterListViewData {
     data object Empty : HpCharacterListViewData
 
     data class Error(
-        val hpCharacterListErrorViewData: HpCharacterListErrorViewData,
+        val hpCharacterListErrorViewData: HpCharacterListErrorViewData
     ) : HpCharacterListViewData
 
     data class Success(
-        val hpCharacterRowViewData: List<HpCharacterRowViewData>,
+        val hpCharacterRowViewData: List<HpCharacterRowViewData>
     ) : HpCharacterListViewData
 }

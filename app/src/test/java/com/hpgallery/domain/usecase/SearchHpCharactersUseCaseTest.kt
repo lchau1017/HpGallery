@@ -38,7 +38,8 @@ class SearchHpCharactersUseCaseTest {
                     dateOfBirth = "19-09-1979",
                     alive = true,
                     image = null
-                ), HpCharacter(
+                ),
+                HpCharacter(
                     id = "2",
                     name = "Hermione Granger",
                     house = "Gryffindor",
@@ -74,7 +75,8 @@ class SearchHpCharactersUseCaseTest {
                     dateOfBirth = "19-09-1979",
                     alive = true,
                     image = null
-                ), HpCharacter(
+                ),
+                HpCharacter(
                     id = "2",
                     name = "Hermione Granger",
                     house = "Gryffindor",

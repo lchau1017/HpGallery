@@ -15,11 +15,11 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -53,7 +53,9 @@ object DataModule {
     @Singleton
     fun provideAppDatabase(@ApplicationContext context: Context): AppDatabase {
         return Room.databaseBuilder(
-            context, AppDatabase::class.java, "hp_database"
+            context,
+            AppDatabase::class.java,
+            "hp_database"
         ).build()
     }
 

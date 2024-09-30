@@ -9,10 +9,12 @@ import com.hpgallery.ui.theme.LocalColourScheme
 
 @Composable
 fun HpFloatingActionButton(
-    isDarkTheme: Boolean, onToggleTheme: () -> Unit
+    isDarkTheme: Boolean,
+    onToggleTheme: () -> Unit
 ) {
     FloatingActionButton(
-        onClick = onToggleTheme, containerColor = LocalColourScheme.current.fab
+        onClick = onToggleTheme,
+        containerColor = LocalColourScheme.current.fab
     ) {
         Icon(
             painter = painterResource(
