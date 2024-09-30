@@ -1,4 +1,4 @@
-name: Android Tests
+name: Tests
 
 on:
   push:
@@ -51,7 +51,7 @@ jobs:
 
   instrumented-test:
     name: Instrumented Tests
-    runs-on: 4core-ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
