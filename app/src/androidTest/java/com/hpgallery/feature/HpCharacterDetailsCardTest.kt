@@ -1,4 +1,4 @@
-package com.hpgallery.data
+package com.hpgallery.feature
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.test.assertIsDisplayed

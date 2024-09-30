@@ -84,7 +84,7 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.lifecycle.runtime.ktx.v260)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.coil.compose)
 
     implementation(libs.ui.tooling)
@@ -101,8 +101,8 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockk)
     testImplementation(libs.androidx.core.testing)
-    testImplementation(libs.androidx.junit.v115)
-    testImplementation(libs.kotlinx.coroutines.test.v173)
+    testImplementation(libs.androidx.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -111,7 +111,7 @@ dependencies {
 
     // AndroidX Test - Core and JUnit Extensions
     androidTestImplementation(libs.androidx.core)
-    androidTestImplementation(libs.androidx.runner.v152)
+    androidTestImplementation(libs.androidx.runner)
     androidTestImplementation(libs.androidx.rules)
 
     // Coroutines for testing

@@ -31,20 +31,20 @@ import com.hpgallery.ui.theme.LocalColourScheme
 @Composable
 fun HpCharacterListScreen(
     viewData: HpCharacterListViewData,
-    searchQuery: String,
+    searchQueryString: String,
     isDarkTheme: Boolean,
     updateSearchQuery: (String) -> Unit,
     onCharacterClick: (String) -> Unit,
     onToggleTheme: () -> Unit
 ) {
-    var searchQueryState by rememberSaveable { mutableStateOf(searchQuery) }
+    var searchQuery by rememberSaveable { mutableStateOf(searchQueryString) }
     // Sync the local search query state with the ViewModel's state
     LaunchedEffect(searchQuery) {
         updateSearchQuery(searchQuery)
     }
     Scaffold(topBar = {
         HpSearchBar(query = searchQuery, onQueryChange = { query ->
-            searchQueryState = query
+            searchQuery = query
         })
     }, floatingActionButton = {
             HpFloatingActionButton(isDarkTheme, onToggleTheme)
@@ -104,7 +104,7 @@ fun HpCharacterListScreenSuccessPreview() {
                     )
                 )
             ),
-            searchQuery = "Harry Potter",
+            searchQueryString = "Harry Potter",
             updateSearchQuery = { /* Do nothing */ },
             onCharacterClick = { /* Do nothing */ },
             onToggleTheme = { /* Do nothing */ }
@@ -119,7 +119,7 @@ fun HpCharacterListScreenLoadingPreview() {
         HpCharacterListScreen(
             isDarkTheme = false,
             viewData = HpCharacterListViewData.Loading,
-            searchQuery = "Harry Potter",
+            searchQueryString = "Harry Potter",
             updateSearchQuery = { /* Do nothing */ },
             onCharacterClick = { /* Do nothing */ },
             onToggleTheme = { /* Do nothing */ }
@@ -134,7 +134,7 @@ fun HpCharacterListScreenEmptyPreview() {
         HpCharacterListScreen(
             isDarkTheme = false,
             viewData = HpCharacterListViewData.Empty,
-            searchQuery = "Harry Potter",
+            searchQueryString = "Harry Potter",
             updateSearchQuery = { /* Do nothing */ },
             onCharacterClick = { /* Do nothing */ },
             onToggleTheme = { /* Do nothing */ }
@@ -151,7 +151,7 @@ fun HpCharacterListScreenErrorPreview() {
             viewData = HpCharacterListViewData.Error(
                 HpCharacterListErrorViewData("An error occurred")
             ),
-            searchQuery = "Harry Potter",
+            searchQueryString = "Harry Potter",
             updateSearchQuery = { /* Do nothing */ },
             onCharacterClick = { /* Do nothing */ },
             onToggleTheme = { /* Do nothing */ }

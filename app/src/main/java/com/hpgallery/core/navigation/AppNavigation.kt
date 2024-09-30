@@ -53,7 +53,7 @@ fun AppNavigation(
             HpCharacterListScreen(
                 isDarkTheme = isDarkTheme,
                 viewData = hpCharacterListState,
-                searchQuery = searchQuery,
+                searchQueryString = searchQuery,
                 updateSearchQuery = { query -> listViewModel.updateSearchQuery(query) },
                 onCharacterClick = { characterId -> appViewModel.onCharacterClicked(characterId) },
                 onToggleTheme = { appViewModel.toggleTheme() }
