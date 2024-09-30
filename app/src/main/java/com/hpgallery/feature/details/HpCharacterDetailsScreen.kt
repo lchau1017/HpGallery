@@ -19,6 +19,7 @@ import com.hpgallery.R
 import com.hpgallery.feature.details.viewdata.HpCharacterDetailsCardViewData
 import com.hpgallery.feature.details.viewdata.HpCharacterDetailsErrorViewData
 import com.hpgallery.feature.details.viewdata.HpCharacterDetailsViewData
+import com.hpgallery.ui.DualModePreview
 import com.hpgallery.ui.component.HpEmptyScreen
 import com.hpgallery.ui.component.HpErrorScreen
 import com.hpgallery.ui.component.HpFloatingActionButton
@@ -26,7 +27,6 @@ import com.hpgallery.ui.component.HpText
 import com.hpgallery.ui.theme.HpGalleryTheme
 import com.hpgallery.ui.theme.LocalColourScheme
 import com.hpgallery.ui.theme.LocalTypography
-import com.hpgallery.ui.utils.DualModePreview
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

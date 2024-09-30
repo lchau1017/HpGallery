@@ -9,9 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.hpgallery.ui.DualModePreview
 import com.hpgallery.ui.theme.HpGalleryTheme
 import com.hpgallery.ui.theme.LocalColourScheme
-import com.hpgallery.ui.utils.DualModePreview
 
 @Composable
 fun HpHouseColorIndicator(

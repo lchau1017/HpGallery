@@ -1,4 +1,4 @@
-package com.hpgallery.ui.utils
+package com.hpgallery.ui
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

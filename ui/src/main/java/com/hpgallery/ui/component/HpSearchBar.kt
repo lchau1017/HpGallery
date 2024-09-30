@@ -17,11 +17,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.hpgallery.R
+import com.hpgallery.ui.DualModePreview
 import com.hpgallery.ui.theme.HpGalleryTheme
 import com.hpgallery.ui.theme.LocalColourScheme
 import com.hpgallery.ui.theme.LocalTypography
-import com.hpgallery.ui.utils.DualModePreview
+import com.hpgallgery.ui.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

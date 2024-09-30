@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import com.hpgallery.feature.list.viewdata.HpCharacterListErrorViewData
 import com.hpgallery.feature.list.viewdata.HpCharacterListViewData
 import com.hpgallery.feature.list.viewdata.HpCharacterRowViewData
+import com.hpgallery.ui.DualModePreview
 import com.hpgallery.ui.component.HpCircularProgressIndicator
 import com.hpgallery.ui.component.HpEmptyScreen
 import com.hpgallery.ui.component.HpErrorScreen
@@ -25,7 +26,6 @@ import com.hpgallery.ui.component.HpFloatingActionButton
 import com.hpgallery.ui.component.HpSearchBar
 import com.hpgallery.ui.theme.HpGalleryTheme
 import com.hpgallery.ui.theme.LocalColourScheme
-import com.hpgallery.ui.utils.DualModePreview
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

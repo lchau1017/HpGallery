@@ -23,3 +23,4 @@ rootProject.name = "HpGallery"
 include(":app")
 include(":domain")
 include(":data")
+include(":ui")

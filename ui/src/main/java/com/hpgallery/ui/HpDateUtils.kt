@@ -1,4 +1,4 @@
-package com.hpgallery.ui.utils
+package com.hpgallery.ui
 
 import java.text.ParseException
 import java.text.SimpleDateFormat

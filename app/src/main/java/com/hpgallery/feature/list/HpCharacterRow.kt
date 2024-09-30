@@ -12,14 +12,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.hpgallery.feature.list.viewdata.HpCharacterRowViewData
+import com.hpgallery.ui.DualModePreview
+import com.hpgallery.ui.HouseColorUtils
 import com.hpgallery.ui.component.HpHouseColorIndicator
 import com.hpgallery.ui.component.HpText
 import com.hpgallery.ui.theme.HpGalleryTheme
 import com.hpgallery.ui.theme.HpShapes
 import com.hpgallery.ui.theme.LocalColourScheme
 import com.hpgallery.ui.theme.LocalTypography
-import com.hpgallery.ui.utils.DualModePreview
-import com.hpgallery.ui.utils.HouseColorUtils
 
 @Composable
 fun HpCharacterRow(

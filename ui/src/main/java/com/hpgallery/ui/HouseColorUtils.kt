@@ -1,4 +1,4 @@
-package com.hpgallery.ui.utils
+package com.hpgallery.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color

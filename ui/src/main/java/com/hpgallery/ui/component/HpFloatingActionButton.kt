@@ -4,8 +4,8 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.painterResource
-import com.hpgallery.R
 import com.hpgallery.ui.theme.LocalColourScheme
+import com.hpgallgery.ui.R
 
 @Composable
 fun HpFloatingActionButton(

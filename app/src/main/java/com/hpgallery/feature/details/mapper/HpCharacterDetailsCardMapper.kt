@@ -2,7 +2,7 @@ package com.hpgallery.feature.details.mapper
 
 import com.hpgallery.domain.model.HpCharacter
 import com.hpgallery.feature.details.viewdata.HpCharacterDetailsCardViewData
-import com.hpgallery.ui.utils.HpDateUtils
+import com.hpgallery.ui.HpDateUtils
 
 fun HpCharacter.toHpCharacterDetailsCardViewData(): HpCharacterDetailsCardViewData {
     return HpCharacterDetailsCardViewData(

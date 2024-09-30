@@ -8,10 +8,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import com.hpgallery.ui.DualModePreview
 import com.hpgallery.ui.theme.HpGalleryTheme
 import com.hpgallery.ui.theme.LocalColourScheme
 import com.hpgallery.ui.theme.LocalTypography
-import com.hpgallery.ui.utils.DualModePreview
 
 @Composable
 fun HpText(

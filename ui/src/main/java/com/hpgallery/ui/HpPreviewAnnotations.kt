@@ -1,4 +1,4 @@
-package com.hpgallery.ui.utils
+package com.hpgallery.ui
 
 import android.content.res.Configuration
 import androidx.compose.ui.tooling.preview.Preview

@@ -11,10 +11,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.hpgallery.R
+import com.hpgallery.ui.DualModePreview
 import com.hpgallery.ui.theme.HpGalleryTheme
 import com.hpgallery.ui.theme.LocalColourScheme
-import com.hpgallery.ui.utils.DualModePreview
+import com.hpgallgery.ui.R
 
 @Composable
 fun HpImage(
