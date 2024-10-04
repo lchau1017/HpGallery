@@ -1,0 +1,5 @@
+<resources>
+    <string name="search_hint">Search...</string>
+    <string name="details_title">Character Details</string>
+    <string name="clear_text_description">Clear Text</string>
+</resources>
